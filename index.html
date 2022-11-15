@@ -1,0 +1,139 @@
+<html>
+    <head>
+        <style>
+            body {
+                background-image: url(img/backgroundStudent.png);
+                background-repeat: no-repeat;
+                background-attachment:inherit;
+                background-position: right;
+                background-size: contain;
+            
+            }
+        </style>
+        <link rel="stylesheet" href="style.css">
+        <script src="./js/SmoothScroll.min.js"></script>
+        <link rel="icon" href="./img/icon.png">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans&family=Prompt&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Portfolio</title>
+        <meta charset="utf-8">
+    </head>
+     <body id="test">
+    <body>
+        <div class="deskmenu">
+            <div id="navbar" class="n">
+                  <div class="progress-container">
+                   <div class="progress-bar" id="myBar"></div>
+                </div>
+                <a style="margin-right:10%;" href="contact.html" target="_self" class="right">Contact</a>
+                <a href="achievement%20.html" target="_self" class="right">Achievement</a>
+                <a href="about.html" target="_self" class="right">About</a>
+                <a href="#home" class="right">Home</a>
+                <a style="margin-left: 18%" href="" class="left">
+                <img src="img/81230.jpg"height="40px">
+            </div>
+        </div>
+        <div class="handmenu sticky">
+            <span id="menubtns" class="menubtn" onclick="Nav()"><i style="color:#9c9c9c;" class="fa fa-bars"></i></span>
+            <div id="mySidenav" class="sidenav">
+                <a class="closebtn" onclick="Nav()"><i class="fa fa-times"></i></a>
+                <a href="index.html" target="_self" style="font-size:100%;" onclick="Nav()">Home</a>
+                <a href="about.html" target="_self" style="font-size:100%;" onclick="Nav()">About</a>
+                <a href="achievement%20.html" target="_self" style="font-size:100%;" onclick="Nav()">Achievement</a>
+                <a href="contact.html" style="font-size:100%;" onclick="Nav()">Contact</a>
+            </div>
+        </div>
+        <div class="main-info">
+          <div class="grid-container">
+                <center>
+                    <br><br><br><br><br><br><br><br><br>
+                <div class="item1"><h1 style="color: black">Hi, My name is <br>Napattarapong Chockwiriyajit</h1></div>
+                <div class="item2">I'm a student who interesting in coding and computer</div>
+                <div class="item3">from chon buri</div>  
+                <div class="item4">I am interested in coding because I want to increase my computer skills.</div>  
+                    </center>
+          </div>
+        </div>
+        <br><br><br><br><br><br><br><br><br> <br><br><br><br><br><br>
+        <button onclick="typeWriter()">Click me</button>
+            <p id="demo"></p>
+            <div class="footer">
+                <center>
+                    <ul class="row2">
+                        <li>
+                            <center>
+                                <b><div><a class="th"></a> </div></b>
+                                <br><img src="img/Logo.png" class="mainimg2">
+                                <div><tt>© nchockwi 2022</tt></div>
+                            </center>
+                        </li>
+                    </ul>
+             </div>
+        <script>
+        window.onscroll = function() {
+        myFunction();
+        myScoll();
+    };
+    var navbar = document.getElementById("navbar");
+    var sticky = navbar.offsetTop;
+    function myFunction() {
+        if (window.pageYOffset >= sticky) {
+            navbar.classList.remove("n");
+            navbar.classList.add("sticky")
+        } else {
+            navbar.classList.remove("sticky");
+            navbar.classList.add("n")
+        }
+    }
+    function Nav() {
+        if(document.getElementById("mySidenav").style.width == 0 || document.getElementById("mySidenav").style.width == "0px") { 
+            document.getElementById("mySidenav").style.width = "250px";
+            document.getElementById("main").style.marginLeft = "250px";
+            document.getElementById("menubtns").style.color = "white";
+        }else{
+            document.getElementById("mySidenav").style.width = "0";
+            document.getElementById("main").style.marginLeft = "0";
+            document.getElementById("menubtns").style.color = "black";
+        }
+    }
+            function loadDoc(name) {
+                const xhttp = new XMLHttpRequest();
+                xhttp.onload = function() {
+                document.getElementById("content").innerHTML = this.responseText;
+  }
+                xhttp.open("GET", name + ".php");
+                xhttp.send();
+}
+            function myScoll() {
+            var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            var height = document.documentElement.scrollHeight - document.getElementById("test").clientHeight;
+            var scrolled = (winScroll / height) * 100;
+            document.getElementById("myBar").style.width = scrolled + "%";
+}
+            var i = 0;
+            var txt = 'jebaited ( ͡👁️ ͜ʖ ͡👁️)' ;
+            var speed = 100;
+
+            function typeWriter() {
+            if (i < txt.length) {
+            document.getElementById("demo").innerHTML += txt.charAt(i);
+            i++;
+            setTimeout(typeWriter, speed);
+             }
+}   
+                    function isInViewport(element) {
+                        const rect = element.getBoundingClientRect();
+                        return (
+            rect.top >= 0 &&
+            rect.left >= 0 &&
+            rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+            rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+                        );
+}
+                anime({
+                    targets:'.square',
+                    translateX: 250
+                })
+</script>

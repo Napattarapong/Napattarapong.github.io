@@ -1,0 +1,206 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="style.css">
+        <script src="./js/SmoothScroll.min.js"></script>
+        <link rel="icon" href="./img/icon.png">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans&family=Prompt&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>ฺAbout me</title>
+        <meta charset="utf-8">
+        <style>
+        .skills{
+          width: 100%;
+          max-width: 1900px;
+          padding: 0 20px;
+        }
+
+        .skill-name{
+          font-size: 18px;
+          font-weight: 700;
+          color: black;
+          text-transform: uppercase;
+          margin: 20px 0;
+        }
+
+        .skill-bar{
+          height: 14px;
+          background: white;
+          border-radius: 3px;
+        }
+
+        .skill-per{
+          height: 14px;
+          background: black;
+          border-radius: 3px;
+          position: relative;
+          animation: fillBars 2.5s 1;
+        }
+
+        .skill-per::before{
+          content: attr(per);
+          position: absolute;
+          padding: 4px 6px;
+          background: #f1f1f1;
+          border-radius: 4px;
+          font-size: 12px;
+          top: -35px;
+          right: 0;
+          transform: translateX(50%);
+        }
+
+        .skill-per::after{
+          content: "";
+          position: absolute;
+          width: 10px;
+          height: 10px;
+          background: #f1f1f1;
+          top: -20px;
+          right: 0;
+          transform: translateX(50%) rotate(45deg);
+          border-radius: 2px;
+        }
+
+        @keyframes fillBars{
+          from{
+            width: 0;
+          }
+          to{
+            width: 100%;
+          }
+        }
+        </style>
+    </head>
+        <body id="test">
+        <div class="deskmenu">
+            <div id="navbar" class="n">
+                 <div class="progress-container">
+                   <div class="progress-bar" id="myBar"></div>
+                </div>
+                <a style="margin-right:10%;" href="contact.html" target="_self" class="right">Contact</a>
+                <a href="achievement%20.html" target="_self" class="right">Achievement</a>
+                <a href="about.html" target="_self" class="right">About</a>
+                <a href="index.html" target="_self" class="right">Home</a>
+                <a style="margin-left: 18%" href="" class="left"><h1>About me</h1></a>
+            </div>
+        </div>
+        <div class="handmenu sticky">
+            <span id="menubtns" class="menubtn" onclick="Nav()"><i style="color:#9c9c9c;" class="fa fa-bars"></i></span>
+            <div id="mySidenav" class="sidenav">
+                <a class="closebtn" onclick="Nav()"><i class="fa fa-times"></i></a>
+                <a href="index.html" target="_self" style="font-size:100%;" onclick="Nav()">Home</a>
+                <a href="about.html" target="_self" style="font-size:100%;" onclick="Nav()">About</a>
+                <a href="achievement%20.html" target="_self" style="font-size:100%;" onclick="Nav()">Achievement</a>
+                <a href="contact.html" style="font-size:100%;" onclick="Nav()">Contact</a>
+            </div>
+        </div>
+        <div class="main-info">
+          <div class="grid-container">
+                <div class="item1"><h1>About me</h1></div>
+                <div class="item2"><img src="img/backgroundStudent.png" height="500px"></div>
+              <div class="item3" >
+                  <br>Name : Napattarapong Chockwiriyajit 
+                  <br><br>Nickname : Gus
+                  <br><br>Located : Chon buri,Thailand
+                  <br><br>School : Sriracha school as a student of Mathematics-science program
+                  <br><br>Interest : coding, edit video and design
+                  <br><br>Hobbies : coding, play computer game and produce song
+                  <br><br><h2>&nbsp&nbsp&nbsp&nbsp&nbsp"You miss every shot you don't take"</h2>
+                  </div>
+              <div class="item5"><h1>Skills</h1></div>
+       <div class="item5">  <div class="skills"><br>
+          <div class="skill"><br>
+            <div class="skill-name">HTML</div>
+            <div class="skill-bar">
+              <div class="skill-per" per="20%" style="max-width:20%"></div>
+            </div>
+          </div>
+
+          <div class="skill">
+            <div class="skill-name">CSS</div>
+            <div class="skill-bar">
+              <div class="skill-per" per="20%" style="max-width:20%"></div>
+            </div>
+          </div>
+
+          <div class="skill">
+            <div class="skill-name">Javascript</div>
+            <div class="skill-bar">
+              <div class="skill-per" per="20%" style="max-width:20%"></div>
+            </div>
+          </div>
+          <div class="skill">
+              
+            <div class="skill-name">C++</div>
+            <div class="skill-bar">
+              <div class="skill-per" per="10%" style="max-width:10%"></div>
+            </div>
+          </div>
+
+            <div class="skill-name">Python</div>
+            <div class="skill-bar">
+              <div class="skill-per" per="30%" style="max-width:30%"></div>
+            </div>
+          </div>
+
+        </div>
+          </div>
+        <br><br><br><br>
+            <div class="footer">
+                <center>
+                    <ul class="row2">
+                        <li>
+                            <center>
+                                <b><div><a class="th"></a> </div></b>
+                                <br><img src="img/Logo.png" class="mainimg2">
+                      <div><tt>© nchockwi 2022</tt></div>
+                            </center>
+                        </li>
+                    </ul>
+             </div>
+    </body>
+</html>
+        <script>
+   window.onscroll = function() {
+        myFunction();
+        myScoll();
+    };
+    var navbar = document.getElementById("navbar");
+    var sticky = navbar.offsetTop;
+    function myFunction() {
+        if (window.pageYOffset >= sticky) {
+            navbar.classList.remove("n");
+            navbar.classList.add("sticky")
+        } else {
+            navbar.classList.remove("sticky");
+            navbar.classList.add("n")
+        }
+    }
+    function Nav() {
+        if(document.getElementById("mySidenav").style.width == 0 || document.getElementById("mySidenav").style.width == "0px") { 
+            document.getElementById("mySidenav").style.width = "250px";
+            document.getElementById("main").style.marginLeft = "250px";
+            document.getElementById("menubtns").style.color = "white";
+        }else{
+            document.getElementById("mySidenav").style.width = "0";
+            document.getElementById("main").style.marginLeft = "0";
+            document.getElementById("menubtns").style.color = "black";
+        }
+    }
+function loadDoc(name) {
+  const xhttp = new XMLHttpRequest();
+  xhttp.onload = function() {
+    document.getElementById("content").innerHTML =
+    this.responseText;
+  }
+  xhttp.open("GET", name + ".php");
+  xhttp.send();
+}
+    function myScoll() {
+            var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            var height = document.documentElement.scrollHeight - document.getElementById("test").clientHeight;
+            var scrolled = (winScroll / height) * 100;
+            document.getElementById("myBar").style.width = scrolled + "%";
+}
+</script>
