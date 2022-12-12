@@ -1,139 +1,508 @@
-<html>
-    <head>
-        <style>
-            body {
-                background-image: url(img/backgroundStudent.png);
-                background-repeat: no-repeat;
-                background-attachment:inherit;
-                background-position: right;
-                background-size: contain;
-            
-            }
-        </style>
-        <link rel="stylesheet" href="style.css">
-        <script src="./js/SmoothScroll.min.js"></script>
-        <link rel="icon" href="./img/icon.png">
-        <link rel="preconnect" href="https://fonts.gstatic.com">
-        <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans&family=Prompt&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Portfolio</title>
-        <meta charset="utf-8">
-    </head>
-     <body id="test">
-    <body>
-        <div class="deskmenu">
-            <div id="navbar" class="n">
-                  <div class="progress-container">
-                   <div class="progress-bar" id="myBar"></div>
-                </div>
-                <a style="margin-right:10%;" href="contact.html" target="_self" class="right">Contact</a>
-                <a href="achievement%20.html" target="_self" class="right">Achievement</a>
-                <a href="about.html" target="_self" class="right">About</a>
-                <a href="#home" class="right">Home</a>
-                <a style="margin-left: 18%" href="" class="left">
-                <img src="img/81230.jpg"height="40px">
-            </div>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>NapattarapongWeb</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <link href="img/81230.jpg" rel="icon">
+  <link href="img/81230.jpg" rel="apple-touch-icon">
+
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <link href='https://fonts.googleapis.com/css?family=Prompt' rel='stylesheet'>
+
+  <link href="assets/css/style.css" rel="stylesheet">
+</head>
+
+<body>
+
+  <!-- ======= Mobile nav toggle button ======= -->
+  <!-- <button type="button" class="mobile-nav-toggle d-xl-none"><i class="bi bi-list mobile-nav-toggle"></i></button> -->
+  <i class="bi bi-list mobile-nav-toggle d-lg-none"></i>
+  <!-- ======= Header ======= -->
+  <header id="header" class="d-flex flex-column justify-content-center">
+
+    <nav id="navbar" class="navbar nav-menu">
+      <ul>
+        <li><a href="#hero" class="nav-link scrollto active"><i class="bx bx-home"></i> <span>Home</span></a></li>
+        <li><a href="#about" class="nav-link scrollto"><i class="bx bx-user"></i> <span>About</span></a></li>
+        <li><a href="#resume" class="nav-link scrollto"><i class="bx bx-file-blank"></i> <span>Education</span></a></li>
+        <li><a href="#portfolio" class="nav-link scrollto"><i class="bx bx-book-content"></i> <span>Achievement</span></a></li>
+      </ul>
+    </nav><!-- .nav-menu -->
+
+  </header><!-- End Header -->
+
+  <!-- ======= Hero Section ======= -->
+  <section id="hero" class="d-flex flex-column justify-content-center">
+    <div class="container" data-aos="zoom-in" data-aos-delay="100">
+      <h1>Napattarapong Chockwiriyajit</h1>
+      <p>I'm <span class="typed" data-typed-items="Developer, Programmer, Musician, Producer"></span></p>
+      <div class="social-links">
+        <a href="https://github.com/Napattarapong" target="_blank" class="github"><i class="bx bxl-github"></i></a>
+        <a href="https://www.facebook.com/napattarapongC/" target="_blank" class="facebook"><i class="bx bxl-facebook"></i></a>
+        <a href="https://www.instagram.com/napattarapong_/" target="_blank" class="instagram"><i class="bx bxl-instagram"></i></a>
+      </div>
+    </div>
+  </section><!-- End Hero -->
+
+  <main id="main">
+
+    <!-- ======= About Section ======= -->
+    <section id="about" class="about">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-title">
+          <h2>About</h2>
+          <p>I'm a student who interesting in coding and computer from chon buri I am interested in coding because I want to increase my computer skills.<br><br></p>
         </div>
-        <div class="handmenu sticky">
-            <span id="menubtns" class="menubtn" onclick="Nav()"><i style="color:#9c9c9c;" class="fa fa-bars"></i></span>
-            <div id="mySidenav" class="sidenav">
-                <a class="closebtn" onclick="Nav()"><i class="fa fa-times"></i></a>
-                <a href="index.html" target="_self" style="font-size:100%;" onclick="Nav()">Home</a>
-                <a href="about.html" target="_self" style="font-size:100%;" onclick="Nav()">About</a>
-                <a href="achievement%20.html" target="_self" style="font-size:100%;" onclick="Nav()">Achievement</a>
-                <a href="contact.html" style="font-size:100%;" onclick="Nav()">Contact</a>
+
+        <div class="row">
+          <div class="col-lg-4">
+            <img src="img/backgroundStudent.png" class="img-fluid" alt="">
+          </div>
+          <div class="col-lg-8 pt-4 pt-lg-0 content">
+            <h3>"You miss every shot you don't take"</h3>
+            <p class="fst-italic"><br><br></p>
+            <div class="row">
+              <div class="col-lg-6">
+                <ul>
+                  <li><i class="bi bi-chevron-right"></i> <strong>Birthday:</strong> <span>27 September 2004</span></li>
+                  <li><i class="bi bi-chevron-right"></i> <strong>Website:</strong> <span>napattarapong.github.io</span></li>
+                  <li><i class="bi bi-chevron-right"></i> <strong>Phone:</strong> <span>095 954 6780</span></li>
+                  <li><i class="bi bi-chevron-right"></i> <strong>City:</strong> <span>Chon buri, Thailand</span></li>
+                </ul>
+              </div>
+              <div class="col-lg-6">
+                <ul>
+                  <li><i class="bi bi-chevron-right"></i> <strong>Age:</strong> <span>18</span></li>
+                  <li><i class="bi bi-chevron-right"></i> <strong>Degree:</strong> <span>Grade 12</span></li>
+                  <li><i class="bi bi-chevron-right"></i> <strong>Email:</strong> <span>NapattarapongCWRYJ@gmail.com</span></li>
+                  <li><i class="bi bi-chevron-right"></i> <strong>Hobbies:</strong> <span>Coding, Computing, Music, Sports</span></li>
+                </ul>
+              </div>
             </div>
-        </div>
-        <div class="main-info">
-          <div class="grid-container">
-                <center>
-                    <br><br><br><br><br><br><br><br><br>
-                <div class="item1"><h1 style="color: black">Hi, My name is <br>Napattarapong Chockwiriyajit</h1></div>
-                <div class="item2">I'm a student who interesting in coding and computer</div>
-                <div class="item3">from chon buri</div>  
-                <div class="item4">I am interested in coding because I want to increase my computer skills.</div>  
-                    </center>
+            <p><br>
+            &nbsp;&nbsp;&nbsp;&nbsp;สวัสดีครับ กระผมชื่อ นายณภัทรพงส์ โชควิริยะจิตต์ ชื่อเล่นกัส ปัจจุบันศึกษาอยู่ที่โรงเรียนศรีราชา อำเภอศรีราชา
+จังหวัดชลบุรี แผนการเรียนที่กระผมเรียนคือวิทยาศาสตร์-คณิตศาสตร์ วิศวกรรมคอม เกรดเฉลยสะสมปัจจุบัน 4 ภาคเรียน
+3.73 อุปนิสัยของกระผมเป็นคนร่าเริง มนุษย์สัมพันธ์ดี ฝักใฝ่หาความรู้ และพัฒนาตนเองอยู่ตลอด กระผมมีความสนใจในด้านเทคโนโลยี 
+และคอมพิวเตอร์เป็นอย่างมากและมีความสามารถทางด้านคอมพิวเตอร์ เช่น การเขียนโปรแกรมเบื้องต้นด้วยภาษาต่างๆ การเขียนเว็บไซต์ 
+และความสามารถอื่นๆด้านเทคโนโลยี จึงทำให้กระผมอยากศึกษาในคณะวิศวกรรมคอมพิวเตอร์ ในระดับอุดมศึกษา
+            </p>
           </div>
         </div>
-        <br><br><br><br><br><br><br><br><br> <br><br><br><br><br><br>
-        <button onclick="typeWriter()">Click me</button>
-            <p id="demo"></p>
-            <div class="footer">
-                <center>
-                    <ul class="row2">
-                        <li>
-                            <center>
-                                <b><div><a class="th"></a> </div></b>
-                                <br><img src="img/Logo.png" class="mainimg2">
-                                <div><tt>© nchockwi 2022</tt></div>
-                            </center>
-                        </li>
-                    </ul>
-             </div>
-        <script>
-        window.onscroll = function() {
-        myFunction();
-        myScoll();
-    };
-    var navbar = document.getElementById("navbar");
-    var sticky = navbar.offsetTop;
-    function myFunction() {
-        if (window.pageYOffset >= sticky) {
-            navbar.classList.remove("n");
-            navbar.classList.add("sticky")
-        } else {
-            navbar.classList.remove("sticky");
-            navbar.classList.add("n")
-        }
-    }
-    function Nav() {
-        if(document.getElementById("mySidenav").style.width == 0 || document.getElementById("mySidenav").style.width == "0px") { 
-            document.getElementById("mySidenav").style.width = "250px";
-            document.getElementById("main").style.marginLeft = "250px";
-            document.getElementById("menubtns").style.color = "white";
-        }else{
-            document.getElementById("mySidenav").style.width = "0";
-            document.getElementById("main").style.marginLeft = "0";
-            document.getElementById("menubtns").style.color = "black";
-        }
-    }
-            function loadDoc(name) {
-                const xhttp = new XMLHttpRequest();
-                xhttp.onload = function() {
-                document.getElementById("content").innerHTML = this.responseText;
-  }
-                xhttp.open("GET", name + ".php");
-                xhttp.send();
-}
-            function myScoll() {
-            var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
-            var height = document.documentElement.scrollHeight - document.getElementById("test").clientHeight;
-            var scrolled = (winScroll / height) * 100;
-            document.getElementById("myBar").style.width = scrolled + "%";
-}
-            var i = 0;
-            var txt = 'jebaited ( ͡👁️ ͜ʖ ͡👁️)' ;
-            var speed = 100;
 
-            function typeWriter() {
-            if (i < txt.length) {
-            document.getElementById("demo").innerHTML += txt.charAt(i);
-            i++;
-            setTimeout(typeWriter, speed);
-             }
-}   
-                    function isInViewport(element) {
-                        const rect = element.getBoundingClientRect();
-                        return (
-            rect.top >= 0 &&
-            rect.left >= 0 &&
-            rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
-            rect.right <= (window.innerWidth || document.documentElement.clientWidth)
-                        );
-}
-                anime({
-                    targets:'.square',
-                    translateX: 250
-                })
-</script>
+      </div>
+    </section><!-- End About Section -->
+
+    <!-- ======= Facts Section ======= -->
+    <section id="facts" class="facts">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-title">
+          <h2>Facts</h2>
+          <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+        </div>
+
+        <div class="row">
+
+          <div class="col-lg-3 col-md-6">
+            <div class="count-box">
+              <i class="bi bi-emoji-smile"></i>
+              <span data-purecounter-start="0" data-purecounter-end="232" data-purecounter-duration="1" class="purecounter"></span>
+              <p>Happy Clients</p>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6 mt-5 mt-md-0">
+            <div class="count-box">
+              <i class="bi bi-journal-richtext"></i>
+              <span data-purecounter-start="0" data-purecounter-end="521" data-purecounter-duration="1" class="purecounter"></span>
+              <p>Projects</p>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6 mt-5 mt-lg-0">
+            <div class="count-box">
+              <i class="bi bi-headset"></i>
+              <span data-purecounter-start="0" data-purecounter-end="1463" data-purecounter-duration="1" class="purecounter"></span>
+              <p>Hours Of Support</p>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6 mt-5 mt-lg-0">
+            <div class="count-box">
+              <i class="bi bi-award"></i>
+              <span data-purecounter-start="0" data-purecounter-end="25" data-purecounter-duration="1" class="purecounter"></span>
+              <p>Awards</p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section><!-- End Facts Section -->
+
+    <!-- ======= Skills Section ======= -->
+    <section id="skills" class="skills section-bg">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-title">
+          <h2>Skills</h2>
+          <p><br></p>
+        </div>
+
+        <div class="row skills-content">
+
+          <div class="col-lg-6">
+
+            <div class="progress">
+              <span class="skill">HTML <i class="val">50%</i></span>
+              <div class="progress-bar-wrap">
+                <div class="progress-bar" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+            </div>
+
+            <div class="progress">
+              <span class="skill">CSS <i class="val">30%</i></span>
+              <div class="progress-bar-wrap">
+                <div class="progress-bar" role="progressbar" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+            </div>
+
+            <div class="progress">
+              <span class="skill">JavaScript<i class="val">40%</i></span>
+              <div class="progress-bar-wrap">
+                <div class="progress-bar" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="col-lg-6">
+
+            <div class="progress">
+              <span class="skill">PHP <i class="val">80%</i></span>
+              <div class="progress-bar-wrap">
+                <div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+            </div>
+
+            <div class="progress">
+              <span class="skill">WordPress/CMS <i class="val">90%</i></span>
+              <div class="progress-bar-wrap">
+                <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+            </div>
+
+            <div class="progress">
+              <span class="skill">Photoshop <i class="val">55%</i></span>
+              <div class="progress-bar-wrap">
+                <div class="progress-bar" role="progressbar" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section><!-- End Skills Section -->
+
+    <!-- ======= Resume Section ======= -->
+    <section id="resume" class="resume">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-title">
+          <h2>Education</h2>
+          <p>ประวัติการศึกษา</p>
+        </div>
+
+        <div class="row">
+          <div class="col-lg-6">
+            <h3 class="resume-title">Primary Education</h3>
+            <div class="resume-item pb-0">
+              <h4>Muang Phochai School</h4>
+              <h5>2012 - 2017</h5>
+              <p><em>Kham Bia, Pho Chai, Roi Et</em></p>
+              <p>ศึกษาในระดับชั้นประถมศึกษาปีที่ 1-6</p>
+                <img src="img/school/1045450633.jpg" width="100px">
+            </div>
+
+            <h3 class="resume-title">Junior High School</h3>
+            <div class="resume-item">
+              <h4>Rongkham School</h4>
+              <h5>2017 - 2019</h5>
+              <p><em>Rong Kham, Rong Kham, Kalasin</em></p>
+              <p>ศึกษาในระดับชั้นมัธยมศึกษาปีที่ 1-3</p>
+                <img src="img/school/download%20(1).png" width="100px">
+            </div>
+                
+          </div>
+          <div class="col-lg-6">
+            <h3 class="resume-title">Senior High School</h3>
+            <div class="resume-item">
+              <h4>Sriracha School</h4>
+              <h5>2019 - Present</h5>
+              <p><em>Sriracha, Sriracha, Chonburi</em></p>
+              <p>ศึกษาในระดับชั้นมัธยมศึกษาปีที่ 4-6 </p>
+                <img src="img/school/648bc75de5f082e1c8b663e23a158b82-removebg-preview.png" width="100px">
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section><!-- End Resume Section -->
+
+    <!-- ======= Portfolio Section ======= -->
+    <section id="portfolio" class="portfolio section-bg">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-title">
+          <h2>Achievement</h2>
+          <p>ผลงาน</p>
+        </div>
+
+        <div class="row">
+          <div class="col-lg-12 d-flex justify-content-center" data-aos="fade-up" data-aos-delay="100">
+            <ul id="portfolio-flters">
+              <li data-filter="*" class="filter-active">Certification</li>
+              <li data-filter=".filter-app">Activities</li>
+              <li data-filter=".filter-card">Code</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="200">
+
+          <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+            <div class="portfolio-wrap">
+              <img src="img/certification/AMI_Onsite.png" class="img-fluid" alt="">
+              <div class="portfolio-info">
+                <h4>AMI</h4>
+                <p>AMI Certification</p>
+                <div class="portfolio-links">
+                  <a href="img/certification/AMI_Onsite.png" data-gallery="portfolioGallery" class="portfolio-lightbox" ><i class="bx bx-plus"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 portfolio-item filter-web">
+            <div class="portfolio-wrap">
+              <img src="img/certification/TobeiT_onsite.png" class="img-fluid" alt="">
+              <div class="portfolio-info">
+                <h4>ToBeiT</h4>
+                <p>ToBeiT'67 On-site</p>
+                <div class="portfolio-links">
+                  <a href="img/certification/TobeiT_onsite.png" data-gallery="portfolioGallery" class="portfolio-lightbox"><i class="bx bx-plus"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 portfolio-item filter-web">
+            <div class="portfolio-wrap">
+              <img src="img/certification/TobeiT_onsite.png" class="img-fluid" alt="">
+              <div class="portfolio-info">
+                <h4>ToBeiT</h4>
+                <p>ToBeiT'67 On-site</p>
+                <div class="portfolio-links">
+                  <a href="img/certification/TobeiT_onsite.png" data-gallery="portfolioGallery" class="portfolio-lightbox"><i class="bx bx-plus"></i></a>
+                </div>
+              </div>
+            </div>
+          </div><div class="col-lg-4 col-md-6 portfolio-item filter-web">
+            <div class="portfolio-wrap">
+              <img src="img/certification/TobeiT_onsite.png" class="img-fluid" alt="">
+              <div class="portfolio-info">
+                <h4>ToBeiT</h4>
+                <p>ToBeiT'67 On-site</p>
+                <div class="portfolio-links">
+                  <a href="img/certification/TobeiT_onsite.png" data-gallery="portfolioGallery" class="portfolio-lightbox"><i class="bx bx-plus"></i></a>
+                </div>
+              </div>
+            </div>
+          </div><div class="col-lg-4 col-md-6 portfolio-item filter-web">
+            <div class="portfolio-wrap">
+              <img src="img/certification/TobeiT_onsite.png" class="img-fluid" alt="">
+              <div class="portfolio-info">
+                <h4>ToBeiT</h4>
+                <p>ToBeiT'67 On-site</p>
+                <div class="portfolio-links">
+                  <a href="img/certification/TobeiT_onsite.png" data-gallery="portfolioGallery" class="portfolio-lightbox"><i class="bx bx-plus"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 portfolio-item filter-web">
+            <div class="portfolio-wrap">
+              <img src="img/certification/TobeiT_onsite.png" class="img-fluid" alt="">
+              <div class="portfolio-info">
+                <h4>ToBeiT</h4>
+                <p>ToBeiT'67 On-site</p>
+                <div class="portfolio-links">
+                  <a href="img/certification/TobeiT_onsite.png" data-gallery="portfolioGallery" class="portfolio-lightbox"><i class="bx bx-plus"></i></a>
+                </div>
+              </div>
+            </div>
+          </div><div class="col-lg-4 col-md-6 portfolio-item filter-web">
+            <div class="portfolio-wrap">
+              <img src="img/certification/TobeiT_onsite.png" class="img-fluid" alt="">
+              <div class="portfolio-info">
+                <h4>ToBeiT</h4>
+                <p>ToBeiT'67 On-site</p>
+                <div class="portfolio-links">
+                  <a href="img/certification/TobeiT_onsite.png" data-gallery="portfolioGallery" class="portfolio-lightbox"><i class="bx bx-plus"></i></a>
+                </div>
+              </div>
+            </div>
+          </div><div class="col-lg-4 col-md-6 portfolio-item filter-web">
+            <div class="portfolio-wrap">
+              <img src="img/certification/TobeiT_onsite.png" class="img-fluid" alt="">
+              <div class="portfolio-info">
+                <h4>ToBeiT</h4>
+                <p>ToBeiT'67 On-site</p>
+                <div class="portfolio-links">
+                  <a href="img/certification/TobeiT_onsite.png" data-gallery="portfolioGallery" class="portfolio-lightbox"><i class="bx bx-plus"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section><!-- End Portfolio Section -->
+
+    
+    <!-- ======= Testimonials Section ======= -->
+    <section id="testimonials" class="testimonials section-bg">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-title">
+          <h2>Portfolio</h2>
+        </div>
+
+        <div class="testimonials-slider swiper" data-aos="fade-up" data-aos-delay="100">
+          <div class="swiper-wrapper">
+
+            <div class="swiper-slide">
+              <div class="testimonial-item">
+                <img src="assets/img/testimonials/testimonials-1.jpg" class="testimonial-img" alt="">
+                <h3>Saul Goodman</h3>
+                <h4>Ceo &amp; Founder</h4>
+                <p>
+                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                  Proin iaculis purus consequat sem cure digni ssim donec porttitora entum suscipit rhoncus. Accusantium quam, ultricies eget id, aliquam eget nibh et. Maecen aliquam, risus at semper.
+                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                </p>
+              </div>
+            </div><!-- End testimonial item -->
+
+            <div class="swiper-slide">
+              <div class="testimonial-item">
+                <img src="assets/img/testimonials/testimonials-2.jpg" class="testimonial-img" alt="">
+                <h3>Sara Wilsson</h3>
+                <h4>Designer</h4>
+                <p>
+                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                  Export tempor illum tamen malis malis eram quae irure esse labore quem cillum quid cillum eram malis quorum velit fore eram velit sunt aliqua noster fugiat irure amet legam anim culpa.
+                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                </p>
+              </div>
+            </div><!-- End testimonial item -->
+
+            <div class="swiper-slide">
+              <div class="testimonial-item">
+                <img src="assets/img/testimonials/testimonials-3.jpg" class="testimonial-img" alt="">
+                <h3>Jena Karlis</h3>
+                <h4>Store Owner</h4>
+                <p>
+                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                  Enim nisi quem export duis labore cillum quae magna enim sint quorum nulla quem veniam duis minim tempor labore quem eram duis noster aute amet eram fore quis sint minim.
+                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                </p>
+              </div>
+            </div><!-- End testimonial item -->
+
+            <div class="swiper-slide">
+              <div class="testimonial-item">
+                <img src="assets/img/testimonials/testimonials-4.jpg" class="testimonial-img" alt="">
+                <h3>Matt Brandon</h3>
+                <h4>Freelancer</h4>
+                <p>
+                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                  Fugiat enim eram quae cillum dolore dolor amet nulla culpa multos export minim fugiat minim velit minim dolor enim duis veniam ipsum anim magna sunt elit fore quem dolore labore illum veniam.
+                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                </p>
+              </div>
+            </div><!-- End testimonial item -->
+
+            <div class="swiper-slide">
+              <div class="testimonial-item">
+                <img src="assets/img/testimonials/testimonials-5.jpg" class="testimonial-img" alt="">
+                <h3>John Larson</h3>
+                <h4>Entrepreneur</h4>
+                <p>
+                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                  Quis quorum aliqua sint quem legam fore sunt eram irure aliqua veniam tempor noster veniam enim culpa labore duis sunt culpa nulla illum cillum fugiat legam esse veniam culpa fore nisi cillum quid.
+                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                </p>
+              </div>
+            </div><!-- End testimonial item -->
+
+          </div>
+          <div class="swiper-pagination"></div>
+        </div>
+
+      </div>
+    </section><!-- End Testimonials Section -->
+
+   
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer">
+    <div class="container">
+      <h3>CONTACT</h3>
+      <p>Napattarapong Chockwiriyajit (Gus)</p>
+      <div class="social-links">
+        <a href="https://github.com/Napattarapong" class="github"><i class="bx bxl-github"></i></a>
+        <a href="https://www.facebook.com/napattarapongC/" target="_blank" class="facebook"><i class="bx bxl-facebook"></i></a>
+        <a href="https://www.instagram.com/napattarapong_/" target="_blank" class="instagram"><i class="bx bxl-instagram"></i></a>
+      </div>
+    </div>
+  </footer>
+
+  <div id="preloader"></div>
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/typed.js/typed.min.js"></script>
+  <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+</body>
+
+</html>
