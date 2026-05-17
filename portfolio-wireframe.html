@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio — Data Scientist / ML Engineer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Inter', Arial, sans-serif; background: #F4EFEA; color: #383838; -webkit-font-smoothing: antialiased; }
+    .container { max-width: 960px; margin: 0 auto; padding: 0 24px; }
+
+    /* ANNOUNCEMENT */
+    .announcement {
+      background: #16AA98; color: #fff; text-align: center; padding: 10px 24px;
+      font-size: 14px; font-family: 'JetBrains Mono', monospace; border-bottom: 2px solid #383838;
+    }
+    .announcement a { color: #fff; }
+
+    /* NAV */
+    nav {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 16px 24px; max-width: 1200px; margin: 0 auto; border-bottom: 2px solid #383838;
+    }
+    .logo { font-family: 'JetBrains Mono', monospace; font-size: 22px; font-weight: 700; text-transform: uppercase; letter-spacing: -0.5px; }
+    .logo span { color: #FF9538; }
+    .nav-links { display: flex; gap: 24px; align-items: center; }
+    .nav-links a {
+      font-family: 'JetBrains Mono', monospace; font-size: 14px; text-transform: uppercase;
+      letter-spacing: 0.32px; color: #383838; text-decoration: none; padding: 6px 8px; border-radius: 2px; transition: color 0.2s;
+    }
+    .nav-links a:hover { color: #6FC2FF; }
+    .nav-links .cta {
+      background: #6FC2FF; color: #000; border: 3px solid #383838;
+      padding: 10px 20px; font-weight: 500; transition: all 0.3s ease-out;
+    }
+    .nav-links .cta:hover { transform: translate(3px, -3px); box-shadow: #383838 -3px 3px 0 0; }
+
+    /* SECTIONS */
+    section { padding: 80px 0; }
+    .bg-cream { background: #F4EFEA; }
+    .bg-yellow { background: #FFDE00; }
+    .bg-blue { background: #6FC2FF; }
+    .bg-white { background: #fff; }
+
+    .section-label {
+      font-family: 'Inter', sans-serif; font-size: 16px; font-weight: 600;
+      letter-spacing: 0.48px; text-transform: uppercase; margin-bottom: 16px; opacity: 0.8;
+    }
+    .section-title { font-family: 'JetBrains Mono', monospace; font-size: 32px; font-weight: 400; line-height: 1.4; margin-bottom: 16px; }
+    .section-desc { font-size: 16px; line-height: 1.5; max-width: 600px; }
+
+    /* HERO */
+    .hero { padding: 100px 0 80px; text-align: center; border-bottom: 2px solid #383838; }
+    .hero .eyebrow { font-family: 'Inter', sans-serif; font-size: 16px; font-weight: 600; letter-spacing: 0.48px; text-transform: uppercase; margin-bottom: 24px; }
+    .hero h1 { font-family: 'JetBrains Mono', monospace; font-size: 56px; font-weight: 400; line-height: 1.2; letter-spacing: 1.12px; text-transform: uppercase; max-width: 720px; margin: 0 auto 24px; }
+    .hero .lead { font-size: 20px; font-weight: 300; line-height: 1.4; max-width: 600px; margin: 0 auto 40px; }
+    .hero-actions { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+    .hero-social { margin-top: 32px; display: flex; gap: 20px; justify-content: center; font-size: 22px; }
+    .hero-social a { color: #383838; text-decoration: none; transition: color 0.2s; }
+    .hero-social a:hover { color: #6FC2FF; }
+
+    /* BUTTONS */
+    .btn {
+      font-family: 'JetBrains Mono', monospace; font-size: 16px; text-transform: uppercase;
+      letter-spacing: 0.32px; padding: 16px 24px; border: 3px solid #383838;
+      border-radius: 0; cursor: pointer; transition: all 0.4s ease-out; text-decoration: none; display: inline-block;
+    }
+    .btn-primary { background: #6FC2FF; color: #000; }
+    .btn-primary:hover { transform: translate(3px, -3px); box-shadow: #383838 -3px 3px 0 0; }
+    .btn-secondary { background: transparent; color: #383838; }
+    .btn-secondary:hover { background: #fff; transform: translate(3px, -3px); box-shadow: #383838 -3px 3px 0 0; }
+    .btn-dark { background: #383838; color: #fff; border-color: #383838; }
+    .btn-dark:hover { background: #fff; color: #383838; transform: translate(3px, -3px); box-shadow: #383838 -3px 3px 0 0; }
+    .btn-sticker {
+      background: #FF7169; color: #000; transform: rotate(-3deg);
+      box-shadow: #383838 -4px 4px 0 0;
+    }
+    .btn-sticker:hover { transform: rotate(-3deg) translate(3px, -3px); box-shadow: #383838 -6px 6px 0 0; }
+
+    /* SMOOTH SCROLL */
+    html { scroll-behavior: smooth; }
+
+    /* CARDS */
+    .card-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 40px; margin-top: 40px; }
+    .card { background: #fff; border: 2px solid #383838; border-radius: 0; padding: 24px; transition: all 0.4s ease-out; }
+    .card:hover { transform: scale(1.05); box-shadow: #383838 -6px 6px 0 0; }
+    .card h3 { font-family: 'JetBrains Mono', monospace; font-size: 18px; font-weight: 400; margin-bottom: 12px; transition: background 0.3s; }
+    .card:hover h3 { background: #FFDE00; display: inline; }
+    .card p { font-size: 14px; line-height: 1.5; opacity: 0.8; }
+    .card-icon { font-size: 32px; margin-bottom: 16px; display: block; }
+    .card-tags { margin-top: 12px; display: flex; gap: 6px; flex-wrap: wrap; }
+
+    /* TAGS */
+    .tag { display: inline-block; padding: 4px 10px; font-size: 11px; font-family: 'JetBrains Mono', monospace; border-radius: 2px; border: 2px solid; }
+    .tag-blue { background: #EBF9FF; border-color: #54B4DE; }
+    .tag-green { background: #E8F5E9; border-color: #22C55E; }
+    .tag-purple { background: #F7F1FF; border-color: #B291DE; }
+    .tag-yellow { background: #FFFDE7; border-color: #E1C427; }
+    .tag-coral { background: #FFEBE9; border-color: #F38E84; }
+    .tag-orange { background: #FDEDDA; border-color: #F5B161; }
+
+    /* SKILL CATEGORY */
+    .skill-category { margin-top: 40px; }
+    .skill-category:first-of-type { margin-top: 0; }
+    .skill-category h3 {
+      font-family: 'JetBrains Mono', monospace; font-size: 18px; font-weight: 500;
+      margin-bottom: 16px; padding-bottom: 8px; border-bottom: 2px solid #383838; display: inline-block;
+    }
+    .skills-grid { display: flex; flex-wrap: wrap; gap: 10px; }
+    .skill-item {
+      background: #fff; border: 2px solid #383838; border-radius: 0;
+      padding: 10px 18px; font-family: 'JetBrains Mono', monospace; font-size: 13px;
+      transition: all 0.3s ease-out;
+    }
+    .skill-item:hover { transform: translate(2px, -2px); box-shadow: #383838 -3px 3px 0 0; }
+
+    /* PROJECT CARD */
+    .project-card {
+      background: #fff; border: 2px solid #383838; border-radius: 0;
+      display: grid; grid-template-columns: 1fr 1.2fr; gap: 0;
+      transition: all 0.4s ease-out; margin-top: 40px;
+    }
+    .project-card:hover { transform: scale(1.02); box-shadow: #383838 -6px 6px 0 0; }
+    .project-image { min-height: 240px; background: #F4EFEA; border-right: 2px solid #383838; display: flex; align-items: center; justify-content: center; font-size: 48px; }
+    .project-info { padding: 32px; display: flex; flex-direction: column; justify-content: center; }
+    .project-info h3 { font-family: 'JetBrains Mono', monospace; font-size: 20px; font-weight: 500; margin-bottom: 8px; }
+    .project-info p { font-size: 14px; line-height: 1.6; opacity: 0.8; margin-bottom: 16px; }
+    .project-info .project-links { display: flex; gap: 16px; }
+    .project-info .project-links a { font-family: 'JetBrains Mono', monospace; font-size: 13px; text-transform: uppercase; color: #383838; text-decoration: none; border-bottom: 2px solid transparent; transition: border-color 0.2s; }
+    .project-info .project-links a:hover { border-color: #6FC2FF; }
+
+    /* COURSEWORK */
+    .coursework-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 20px; margin-top: 32px; }
+    .coursework-item { background: #fff; border: 2px solid #383838; padding: 20px; }
+    .coursework-item h4 { font-family: 'JetBrains Mono', monospace; font-size: 15px; margin-bottom: 8px; }
+    .coursework-item p { font-size: 13px; line-height: 1.5; opacity: 0.8; }
+
+    /* RESEARCH */
+    .research-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 24px; margin-top: 32px; }
+    .research-card { background: #fff; border: 2px solid #383838; padding: 24px; transition: all 0.3s ease-out; text-align: left; }
+    .research-card:hover { transform: translate(2px, -2px); box-shadow: #383838 -4px 4px 0 0; }
+    .research-card h4 { font-family: 'JetBrains Mono', monospace; font-size: 16px; margin-bottom: 10px; }
+    .research-card p { font-size: 13px; line-height: 1.5; opacity: 0.8; }
+
+    /* ABOUT */
+    .about-content { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-top: 32px; align-items: center; }
+    .about-text p { font-size: 15px; line-height: 1.7; margin-bottom: 16px; }
+    .about-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .stat-box { background: #fff; border: 2px solid #383838; padding: 20px; text-align: center; }
+    .stat-box .number { font-family: 'JetBrains Mono', monospace; font-size: 28px; font-weight: 700; }
+    .stat-box .label { font-size: 12px; text-transform: uppercase; letter-spacing: 0.5px; margin-top: 4px; opacity: 0.7; }
+
+    /* CONTACT FORM */
+    .contact-form { max-width: 480px; margin: 32px auto 0; }
+    .contact-form input, .contact-form textarea {
+      width: 100%; background: rgba(248, 248, 247, 0.7);
+      border: 2px solid #383838; border-radius: 2px; padding: 16px 20px;
+      font-size: 16px; font-family: 'Inter', sans-serif; transition: border-color 0.2s ease-in-out;
+      outline: none; margin-bottom: 16px;
+    }
+    .contact-form input:hover, .contact-form textarea:hover { border-color: #2BA5FF; }
+    .contact-form input:focus, .contact-form textarea:focus { border-color: #2BA5FF; }
+    .contact-form textarea { min-height: 120px; resize: vertical; }
+
+    /* FOOTER */
+    footer { background: #383838; color: #fff; padding: 60px 0 40px; }
+    footer a { color: #fff; text-decoration: none; }
+    footer a:hover { text-decoration: underline; }
+    .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 40px; }
+    footer h4 { font-family: 'JetBrains Mono', monospace; font-size: 14px; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 16px; color: #A2A2A2; }
+    footer ul { list-style: none; display: flex; flex-direction: column; gap: 8px; font-size: 14px; }
+    .social-links { display: flex; gap: 16px; }
+    .social-links a { font-size: 20px; }
+
+    /* SCROLL REVEAL */
+    .reveal { opacity: 0; transform: translateY(30px); transition: opacity 0.6s ease-out, transform 0.6s ease-out; }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+
+    .brutal-divider { height: 3px; background: #383838; border: none; margin: 0; }
+
+    @media (max-width: 768px) {
+      nav { flex-wrap: wrap; gap: 12px; }
+      .nav-links { flex-wrap: wrap; gap: 12px; }
+      .hero h1 { font-size: 32px; letter-spacing: 0.6px; }
+      .hero { padding: 60px 0 40px; }
+      section { padding: 48px 0; }
+      .card-grid { grid-template-columns: 1fr; gap: 24px; }
+      .project-card { grid-template-columns: 1fr; }
+      .project-image { border-right: none; border-bottom: 2px solid #383838; }
+      .about-content { grid-template-columns: 1fr; }
+      .about-stats { grid-template-columns: 1fr 1fr; }
+      .section-title { font-size: 24px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ========== 1. ANNOUNCEMENT BANNER ========== -->
+  <div class="announcement">
+    ✦ Open to data science & ML research opportunities — <a href="#contact">Let's connect →</a>
+  </div>
+
+  <!-- ========== 2. NAVIGATION ========== -->
+  <nav>
+    <div class="logo">ml<span>.</span></div>
+    <div class="nav-links">
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#research">Research</a>
+    </div>
+  </nav>
+
+  <!-- ========== 3. HERO ========== -->
+  <section id="hero" class="hero bg-cream">
+    <div class="container">
+      <div class="eyebrow">Data Scientist & ML Engineer</div>
+      <h1>Turning Data Into<br>Intelligence</h1>
+      <p class="lead">
+        Passionate about building machine learning pipelines, exploring NLP and computer vision,
+        and solving real-world problems with statistical rigor and deep learning.
+      </p>
+      <div class="hero-actions">
+        <a href="#projects" class="btn btn-primary">View My Projects</a>
+        <a href="NapattarapongCV_intern.pdf" download class="btn btn-secondary">Download Resume</a>
+      </div>
+      <div class="hero-social">
+        <a href="https://github.com/Napattarapong" target="_blank" rel="noopener" title="GitHub">⌂</a>
+        <a href="https://www.linkedin.com/in/napattarapong-chockwiriyajit-680510329/" target="_blank" rel="noopener" title="LinkedIn">▣</a>
+        <a href="#" title="Kaggle">◈</a>
+        <a href="#" title="Email">✉</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== 4. ABOUT ME ========== -->
+        <a href="#" title="Kaggle">◈</a>
+        <a href="#" title="Email">✉</a>
+      </div>
+    </div>
+  </section>
+
+  <hr class="brutal-divider">
+
+  <!-- ========== 4. ABOUT ME ========== -->
+  <section id="about" class="bg-cream">
+    <div class="container reveal">
+      <div class="section-label">About Me</div>
+      <h2 class="section-title">Who I Am</h2>
+      <div class="about-content">
+        <div class="about-text">
+          <p>
+            I'm a data scientist and machine learning engineer with a strong foundation in statistics,
+            probability, and experimental design. I believe that good ML starts with understanding the
+            data — and I'm equally comfortable building regression models in R, training YOLO for
+            computer vision, or experimenting with transformer architectures for NLP.
+          </p>
+          <p>
+            My interests span the full ML spectrum: from feature selection and hyperparameter tuning
+            to cutting-edge retrieval-augmented generation (RAG) and vector databases. I'm always
+            reading research papers and looking for ways to turn theory into practice.
+          </p>
+        </div>
+        <div class="about-stats">
+          <div class="stat-box">
+            <div class="number">6+</div>
+            <div class="label">ML Domains</div>
+          </div>
+          <div class="stat-box">
+            <div class="number">3</div>
+            <div class="label">Languages</div>
+          </div>
+          <div class="stat-box">
+            <div class="number">R</div>
+            <div class="label">Statistical Tool</div>
+          </div>
+          <div class="stat-box">
+            <div class="number">RAG</div>
+            <div class="label">Current Focus</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="brutal-divider">
+
+  <!-- ========== 5. SKILLS & EXPERTISE (yellow bg) ========== -->
+  <section id="skills" class="bg-yellow">
+    <div class="container reveal">
+      <div class="section-label">Expertise</div>
+      <h2 class="section-title">Skills & Domains</h2>
+      <p class="section-desc">Six core areas of my ML skill set — from statistics to deep learning.</p>
+
+      <div class="skill-category">
+        <h3>📊 Statistics</h3>
+        <div class="skills-grid">
+          <span class="skill-item">Probability Theory</span>
+          <span class="skill-item">Statistical Methods</span>
+          <span class="skill-item">Regression Analysis</span>
+          <span class="skill-item">Feature Selection</span>
+          <span class="skill-item">Experimental Design</span>
+          <span class="skill-item">Multi-Linear Regression</span>
+          <span class="skill-item">R Programming</span>
+        </div>
+      </div>
+
+      <div class="skill-category">
+        <h3>💻 Coding</h3>
+        <div class="skills-grid">
+          <span class="skill-item">Python</span>
+          <span class="skill-item">Java</span>
+          <span class="skill-item">OOP Principles</span>
+          <span class="skill-item">Database Concepts</span>
+          <span class="skill-item">R</span>
+          <span class="skill-item">SQL</span>
+        </div>
+      </div>
+
+      <div class="skill-category">
+        <h3>📝 NLP</h3>
+        <div class="skills-grid">
+          <span class="skill-item">NLP Pipelines</span>
+          <span class="skill-item">Transformers</span>
+          <span class="skill-item">RAG</span>
+          <span class="skill-item">Vector Databases</span>
+          <span class="skill-item">Research Paper Reading</span>
+          <span class="skill-item">Tokenization & Embeddings</span>
+        </div>
+      </div>
+
+      <div class="skill-category">
+        <h3>👁️ Computer Vision</h3>
+        <div class="skills-grid">
+          <span class="skill-item">Multi-input Analysis</span>
+          <span class="skill-item">YOLO</span>
+          <span class="skill-item">CLIP</span>
+          <span class="skill-item">Image Processing</span>
+          <span class="skill-item">Audio Analysis</span>
+          <span class="skill-item">Tabular + Vision Fusion</span>
+        </div>
+      </div>
+
+      <div class="skill-category">
+        <h3>⚙️ Machine Learning</h3>
+        <div class="skills-grid">
+          <span class="skill-item">ML Pipelines</span>
+          <span class="skill-item">Feature Engineering</span>
+          <span class="skill-item">Hyperparameter Tuning</span>
+          <span class="skill-item">Model Evaluation</span>
+          <span class="skill-item">Cross-Validation</span>
+        </div>
+      </div>
+
+      <div class="skill-category">
+        <h3>🧠 Deep Learning</h3>
+        <div class="skills-grid">
+          <span class="skill-item">Neural Networks</span>
+          <span class="skill-item">Backpropagation</span>
+          <span class="skill-item">CNN Architectures</span>
+          <span class="skill-item">Transfer Learning</span>
+          <span class="skill-item">Loss Functions</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="brutal-divider">
+
+  <!-- ========== 6. FEATURED PROJECTS ========== -->
+  <section id="projects" class="bg-cream">
+    <div class="container reveal">
+      <div class="section-label">Featured Work</div>
+      <h2 class="section-title">Projects I've Built</h2>
+      <p class="section-desc">Course projects and personal work spanning statistics, computer vision, and NLP.</p>
+
+      <div class="project-card">
+        <div class="project-image">📈</div>
+        <div class="project-info">
+          <h3>Population Age Prediction</h3>
+          <p>Built a multi-linear regression model in R to predict population age distributions. Applied feature selection techniques and validated using statistical methods including ANOVA and residual analysis.</p>
+          <div class="card-tags" style="margin-bottom: 16px;">
+            <span class="tag tag-blue">R</span>
+            <span class="tag tag-green">Regression</span>
+            <span class="tag tag-yellow">Feature Selection</span>
+            <span class="tag tag-purple">Statistics</span>
+          </div>
+          <div class="project-links">
+            <a href="#">View on GitHub →</a>
+            <a href="#">Report →</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-image">👁️</div>
+        <div class="project-info">
+          <h3>Multi-Input Analysis (Image + Audio + Tabular)</h3>
+          <p>Developed a multi-modal system combining YOLO for object detection and CLIP for image-text alignment. Integrated audio and tabular data streams for comprehensive analysis.</p>
+          <div class="card-tags" style="margin-bottom: 16px;">
+            <span class="tag tag-coral">YOLO</span>
+            <span class="tag tag-purple">CLIP</span>
+            <span class="tag tag-blue">Python</span>
+            <span class="tag tag-green">CV</span>
+          </div>
+          <div class="project-links">
+            <a href="#">View on GitHub →</a>
+            <a href="#">Demo →</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="card-grid">
+        <div class="card">
+          <span class="card-icon">📝</span>
+          <h3>NLP Pipeline</h3>
+          <p>End-to-end NLP pipeline with tokenization, embedding, transformer models, and RAG integration using vector databases.</p>
+          <div class="card-tags">
+            <span class="tag tag-green">NLP</span>
+            <span class="tag tag-blue">Transformers</span>
+            <span class="tag tag-orange">RAG</span>
+          </div>
+        </div>
+        <div class="card">
+          <span class="card-icon">🔬</span>
+          <h3>ML Pipeline Framework</h3>
+          <p>Modular ML pipeline with automated feature selection, hyperparameter tuning, cross-validation, and model evaluation.</p>
+          <div class="card-tags">
+            <span class="tag tag-purple">Python</span>
+            <span class="tag tag-yellow">Scikit-learn</span>
+            <span class="tag tag-blue">MLOps</span>
+          </div>
+        </div>
+        <div class="card">
+          <span class="card-icon">⚡</span>
+          <h3>Neural Network From Scratch</h3>
+          <p>Implemented neural network fundamentals including backpropagation, activation functions, and loss optimization from the ground up.</p>
+          <div class="card-tags">
+            <span class="tag tag-coral">Deep Learning</span>
+            <span class="tag tag-purple">NumPy</span>
+            <span class="tag tag-green">Math</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="brutal-divider">
+
+  <!-- ========== 7. EDUCATION & COURSEWORK (white bg) ========== -->
+  <section id="coursework" class="bg-white">
+    <div class="container reveal">
+      <div class="section-label">Education</div>
+      <h2 class="section-title">Coursework & Training</h2>
+      <p class="section-desc">Completed coursework in statistics, probability, and machine learning methods.</p>
+      <div class="coursework-grid">
+        <div class="coursework-item">
+          <h4>📊 Probability & Statistics</h4>
+          <p>Core probability theory, distributions, hypothesis testing, confidence intervals, and Bayesian inference.</p>
+        </div>
+        <div class="coursework-item">
+          <h4>📈 Statistical Methods</h4>
+          <p>Advanced statistical modeling including regression, ANOVA, experimental design, and feature selection techniques.</p>
+        </div>
+        <div class="coursework-item">
+          <h4>🧪 Experimental Design</h4>
+          <p>Design of experiments, A/B testing methodology, confounding variables, and causal inference.</p>
+        </div>
+        <div class="coursework-item">
+          <h4>💻 Object-Oriented Programming</h4>
+          <p>OOP principles in Python and Java — encapsulation, inheritance, polymorphism, and design patterns.</p>
+        </div>
+        <div class="coursework-item">
+          <h4>🗄️ Database Concepts</h4>
+          <p>Relational database design, SQL, normalization, indexing, and basic query optimization.</p>
+        </div>
+        <div class="coursework-item">
+          <h4>📐 Multi-Linear Regression (R)</h4>
+          <p>Course project: predicted population age using MLR in R with feature selection and model diagnostics.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="brutal-divider">
+
+  <!-- ========== 8. RESEARCH INTERESTS (blue bg + sticker CTA) ========== -->
+  <section id="research" class="bg-blue" style="text-align: center; padding: 80px 0;">
+    <div class="container reveal">
+      <div style="font-size: 56px; margin-bottom: 16px;">🔬</div>
+      <div class="section-label" style="opacity: 0.7;">Research Interests</div>
+      <h2 style="font-family: 'JetBrains Mono', monospace; font-size: 32px; font-weight: 400; margin-bottom: 32px;">
+        What I'm Exploring
+      </h2>
+      <div class="research-grid" style="text-align: left;">
+        <div class="research-card">
+          <h4>📄 RAG & Vector Databases</h4>
+          <p>Building retrieval-augmented generation pipelines with vector embeddings, dense retrieval, and knowledge base integration.</p>
+        </div>
+        <div class="research-card">
+          <h4>🧠 Transformer Models</h4>
+          <p>Deep understanding of attention mechanisms, BERT/GPT architectures, fine-tuning strategies, and model interpretability.</p>
+        </div>
+        <div class="research-card">
+          <h4>👁️ Multi-Modal Learning</h4>
+          <p>Combining vision, language, and audio — inspired by CLIP and YOLO — for richer representation learning.</p>
+        </div>
+      </div>
+      <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; margin-top: 40px;">
+        <a href="#contact" class="btn btn-dark">Read My Notes</a>
+        <a href="#contact" class="btn btn-sticker">Let's Collaborate →</a>
+      </div>
+    </div>
+  </section>
+
+  <hr class="brutal-divider">
+
+  <!-- ========== 9. CONTACT FORM (yellow bg) ========== -->
+  <section id="contact" class="bg-yellow">
+    <div class="container reveal">
+      <div class="section-label">Get in Touch</div>
+      <h2 class="section-title">Let's Work Together</h2>
+      <p class="section-desc">Have a project, research idea, or just want to chat about ML? Drop me a message.</p>
+      <div class="contact-form">
+        <input type="text" placeholder="Your Name">
+        <input type="email" placeholder="Your Email">
+        <textarea placeholder="Tell me about your project or idea..."></textarea>
+        <a href="#" class="btn btn-secondary" style="width: 100%; text-align: center;" onclick="handleContact(event)">Send Message</a>
+      </div>
+    </div>
+  </section>
+
+  <hr class="brutal-divider">
+
+  <!-- ========== 10. FOOTER ========== -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <h4>Navigation</h4>
+          <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#research">Research</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Contact</h4>
+          <ul>
+            <li><a href="#">hello@datascience.dev</a></li>
+            <li><a href="NapattarapongCV_intern.pdf" download>Resume (PDF)</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Social</h4>
+          <div class="social-links">
+            <a href="https://github.com/Napattarapong" target="_blank" rel="noopener" title="GitHub">⌂</a>
+            <a href="https://www.linkedin.com/in/napattarapong-chockwiriyajit-680510329/" target="_blank" rel="noopener" title="LinkedIn">▣</a>
+            <a href="#" title="Kaggle">◈</a>
+          </div>
+        </div>
+        <div>
+          <h4>Colophon</h4>
+          <ul>
+            <li><a href="#">Built with brutalist intent</a></li>
+            <li><a href="#">JetBrains Mono + Inter</a></li>
+            <li><a href="#">Hosted with ❤️</a></li>
+          </ul>
+        </div>
+      </div>
+      <div style="margin-top: 40px; padding-top: 24px; border-top: 1px solid #555; font-size: 12px; opacity: 0.6; font-family: 'JetBrains Mono', monospace;">
+        © 2026 — Data Science Portfolio
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Scroll reveal
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) entry.target.classList.add('visible');
+      });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+    // Contact form handler
+    function handleContact(e) {
+      e.preventDefault();
+      const name = document.querySelector('#contact input[type="text"]').value.trim();
+      const email = document.querySelector('#contact input[type="email"]').value.trim();
+      const msg = document.querySelector('#contact textarea').value.trim();
+      if (!name || !email || !msg) {
+        alert('Please fill in all fields.');
+        return;
+      }
+      alert(`Thanks ${name}! Your message has been sent. I'll get back to you at ${email}.`);
+      document.querySelector('#contact input[type="text"]').value = '';
+      document.querySelector('#contact input[type="email"]').value = '';
+      document.querySelector('#contact textarea').value = '';
+    }
+  </script>
+</body>
+</html>

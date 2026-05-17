@@ -1,0 +1,679 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wireframe — MotherDuck Inspired</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+  <style>
+    /* === RESET + BASE === */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Inter', Arial, sans-serif;
+      background: #F4EFEA;
+      color: #383838;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* Mono display font — JetBrains Mono stands in for Aeonik Mono */
+    .mono { font-family: 'JetBrains Mono', monospace; }
+
+    /* === LAYOUT CONSTANTS === */
+    .container { max-width: 960px; margin: 0 auto; padding: 0 24px; }
+    .full-bleed { width: 100%; }
+
+    /* === ANNOUNCEMENT BANNER === */
+    .announcement {
+      background: #16AA98;
+      color: #fff;
+      text-align: center;
+      padding: 10px 24px;
+      font-size: 14px;
+      font-family: 'JetBrains Mono', monospace;
+      letter-spacing: 0.3px;
+      border-bottom: 2px solid #383838;
+    }
+    .announcement a {
+      color: #fff;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+    /* === NAV === */
+    nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 16px 24px;
+      max-width: 1200px;
+      margin: 0 auto;
+      border-bottom: 2px solid #383838;
+    }
+    .nav-links { display: flex; gap: 24px; align-items: center; }
+    .nav-links a {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 14px;
+      text-transform: uppercase;
+      letter-spacing: 0.32px;
+      color: #383838;
+      text-decoration: none;
+      padding: 6px 8px;
+      border-radius: 2px;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: #6FC2FF; }
+    .nav-links .cta {
+      background: #6FC2FF;
+      color: #000;
+      border: 3px solid #383838;
+      padding: 10px 20px;
+      font-weight: 500;
+      transition: all 0.3s ease-out;
+      display: inline-block;
+    }
+    .nav-links .cta:hover {
+      transform: translate(3px, -3px);
+      box-shadow: #383838 -3px 3px 0 0;
+      color: #000;
+    }
+    .logo {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 24px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: -0.5px;
+    }
+    .logo span { color: #FF9538; }
+
+    /* === SECTIONS === */
+    section { padding: 80px 0; }
+    .section-cream { background: #F4EFEA; }
+    .section-yellow { background: #FFDE00; }
+    .section-blue { background: #6FC2FF; }
+    .section-white { background: #fff; }
+    .section-dark { background: #383838; color: #fff; }
+
+    /* === HERO === */
+    .hero {
+      padding: 100px 0 80px;
+      text-align: center;
+      border-bottom: 2px solid #383838;
+    }
+    .hero .eyebrow {
+      font-family: 'Inter', sans-serif;
+      font-size: 16px;
+      font-weight: 600;
+      letter-spacing: 0.48px;
+      text-transform: uppercase;
+      margin-bottom: 24px;
+      color: #383838;
+    }
+    .hero h1 {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 56px;
+      font-weight: 400;
+      line-height: 1.2;
+      letter-spacing: 1.12px;
+      text-transform: uppercase;
+      max-width: 720px;
+      margin: 0 auto 24px;
+    }
+    .hero .lead {
+      font-size: 20px;
+      font-weight: 300;
+      line-height: 1.4;
+      max-width: 600px;
+      margin: 0 auto 40px;
+      color: #383838;
+    }
+    .hero-actions { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+
+    /* === BUTTONS === */
+    .btn {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 16px;
+      text-transform: uppercase;
+      letter-spacing: 0.32px;
+      padding: 16px 24px;
+      border: 3px solid #383838;
+      border-radius: 0;
+      cursor: pointer;
+      transition: all 0.4s ease-out;
+      text-decoration: none;
+      display: inline-block;
+      position: relative;
+    }
+    .btn-primary {
+      background: #6FC2FF;
+      color: #000;
+    }
+    .btn-primary:hover {
+      transform: translate(3px, -3px);
+      box-shadow: #383838 -3px 3px 0 0;
+    }
+    .btn-secondary {
+      background: transparent;
+      color: #383838;
+    }
+    .btn-secondary:hover {
+      background: #fff;
+      transform: translate(3px, -3px);
+      box-shadow: #383838 -3px 3px 0 0;
+    }
+    .btn-dark {
+      background: #383838;
+      color: #fff;
+      border-color: #383838;
+    }
+    .btn-dark:hover {
+      background: #fff;
+      color: #383838;
+      transform: translate(3px, -3px);
+      box-shadow: #383838 -3px 3px 0 0;
+    }
+    .btn-sticker {
+      background: #FF7169;
+      color: #000;
+      transform: rotate(-3deg);
+      box-shadow: #383838 -4px 4px 0 0;
+    }
+    .btn-sticker:hover {
+      transform: rotate(-3deg) translate(3px, -3px);
+      box-shadow: #383838 -6px 6px 0 0;
+    }
+
+    /* === SECTION HEADERS === */
+    .section-label {
+      font-family: 'Inter', sans-serif;
+      font-size: 16px;
+      font-weight: 600;
+      letter-spacing: 0.48px;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+      color: #383838;
+      opacity: 0.8;
+    }
+    .section-title {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 32px;
+      font-weight: 400;
+      line-height: 1.4;
+      margin-bottom: 16px;
+    }
+    .section-desc {
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 1.5;
+      max-width: 600px;
+      color: #383838;
+    }
+
+    /* === CARD GRID === */
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 40px;
+      margin-top: 40px;
+    }
+    .card {
+      background: #fff;
+      border: 2px solid #383838;
+      border-radius: 0;
+      padding: 24px;
+      transition: all 0.4s ease-out;
+      cursor: default;
+    }
+    .card:hover {
+      transform: scale(1.05);
+      box-shadow: #383838 -6px 6px 0 0;
+    }
+    .card h3 {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 18px;
+      font-weight: 400;
+      margin-bottom: 12px;
+      transition: background 0.3s;
+      padding: 4px -4px;
+    }
+    .card:hover h3 { background: #FFDE00; color: #383838; display: inline; }
+    .card p { font-size: 14px; line-height: 1.5; color: #383838; opacity: 0.8; }
+    .card-icon { font-size: 32px; margin-bottom: 16px; display: block; }
+
+    /* === TABS === */
+    .tabs {
+      display: flex;
+      gap: 0;
+      margin-bottom: 32px;
+      border-bottom: 3px solid #383838;
+    }
+    .tab {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 16px;
+      text-transform: uppercase;
+      letter-spacing: 0.32px;
+      padding: 16px 24px;
+      background: #fff;
+      border: 3px solid #383838;
+      border-bottom: none;
+      border-radius: 0;
+      cursor: pointer;
+      transition: all 0.4s ease-out;
+      color: #000;
+    }
+    .tab.active {
+      box-shadow: #FFDE00 -6px 6px 0 0;
+      position: relative;
+      z-index: 1;
+    }
+    .tab:not(.active):hover { background: #F4EFEA; }
+    .tab-content { display: none; padding: 24px 0; }
+    .tab-content.active { display: block; }
+
+    /* === STICKER CTA BAND === */
+    .sticker-band {
+      position: relative;
+      padding: 60px 0;
+      text-align: center;
+      overflow: hidden;
+    }
+
+    /* === NEWSLETTER FORM === */
+    .newsletter-form {
+      max-width: 480px;
+      margin: 0 auto;
+    }
+    .newsletter-form input[type="email"] {
+      width: 100%;
+      height: 58px;
+      background: rgba(248, 248, 247, 0.7);
+      border: 2px solid #383838;
+      border-radius: 2px;
+      padding: 16px 24px;
+      font-size: 16px;
+      font-family: 'Inter', sans-serif;
+      transition: border-color 0.2s ease-in-out;
+      outline: none;
+    }
+    .newsletter-form input[type="email"]:hover { border-color: #2BA5FF; }
+    .newsletter-form input[type="email"]:focus { border-color: #2BA5FF; }
+    .newsletter-form .checkbox-group {
+      margin: 16px 0;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .newsletter-form label.checkbox {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 14px;
+      cursor: pointer;
+    }
+    .newsletter-form label.checkbox input[type="checkbox"] {
+      width: 22px;
+      height: 22px;
+      border: 2px solid #383838;
+      border-radius: 0;
+      accent-color: #383838;
+    }
+
+    /* === FOOTER === */
+    footer {
+      background: #383838;
+      color: #fff;
+      padding: 60px 0 40px;
+    }
+    footer a { color: #fff; text-decoration: none; font-size: 14px; }
+    footer a:hover { text-decoration: underline; }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 40px;
+    }
+    footer h4 {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 14px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 16px;
+      color: #A2A2A2;
+    }
+    footer ul { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+
+    /* === SCROLL REVEAL (simple) === */
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+
+    /* === DECORATIVE DOODLE PLACEHOLDER === */
+    .doodle {
+      display: inline-block;
+      font-size: 48px;
+      opacity: 0.3;
+      user-select: none;
+    }
+
+    /* === RESPONSIVE === */
+    @media (max-width: 768px) {
+      nav { flex-wrap: wrap; gap: 12px; }
+      .nav-links { flex-wrap: wrap; gap: 12px; }
+      .hero h1 { font-size: 32px; letter-spacing: 0.6px; }
+      .hero { padding: 60px 0 40px; }
+      section { padding: 48px 0; }
+      .card-grid { grid-template-columns: 1fr; gap: 24px; }
+      .tabs { flex-wrap: wrap; }
+      .tab { flex: 1; min-width: 120px; text-align: center; }
+      .section-title { font-size: 24px; }
+    }
+
+    /* === BRUTALIST DIVIDER === */
+    .brutal-divider {
+      height: 3px;
+      background: #383838;
+      border: none;
+      margin: 0;
+    }
+
+    /* === TAG PILLS === */
+    .tag {
+      display: inline-block;
+      padding: 4px 12px;
+      font-size: 12px;
+      font-family: 'JetBrains Mono', monospace;
+      border-radius: 2px;
+      border: 2px solid;
+    }
+    .tag-info { background: #EBF9FF; border-color: #54B4DE; }
+    .tag-success { background: #E8F5E9; border-color: #22C55E; }
+    .tag-purple { background: #F7F1FF; border-color: #B291DE; }
+  </style>
+</head>
+<body>
+
+  <!-- ANNOUNCEMENT BANNER -->
+  <div class="announcement">
+    🐤 New: MotherDuck MCP Server — connect AI agents to your data warehouse.
+    <a href="#">Learn more →</a>
+  </div>
+
+  <!-- NAV -->
+  <nav>
+    <div class="logo">mother<span>duck</span></div>
+    <div class="nav-links">
+      <a href="#">Product</a>
+      <a href="#">Community</a>
+      <a href="#">Company</a>
+      <a href="#">Docs</a>
+      <a href="#">Pricing</a>
+      <a href="#" class="cta">Try 7 Days Free</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero section-cream">
+    <div class="container">
+      <div class="eyebrow">Data Warehouse + AI</div>
+      <h1>Infrastructure for<br>Answers</h1>
+      <p class="lead">
+        The cloud data warehouse built for answers, in SQL or natural language.
+        Fast, serverless analytics powered by DuckDB.
+      </p>
+      <div class="hero-actions">
+        <a href="#" class="btn btn-primary">Try 7 Days Free</a>
+        <a href="#" class="btn btn-secondary">Book a Demo</a>
+      </div>
+      <div style="margin-top: 40px; font-size: 14px; opacity: 0.6;">
+        <span class="doodle">☁️</span> No credit card required
+      </div>
+    </div>
+  </section>
+
+  <hr class="brutal-divider">
+
+  <!-- SECTION: FEATURES (cream) -->
+  <section class="section-cream">
+    <div class="container reveal">
+      <div class="section-label">What You Can Build</div>
+      <h2 class="section-title">Data Warehouse + AI</h2>
+      <p class="section-desc">Query your data warehouse using DuckDB's engine, with built-in AI that lets you ask questions in plain English.</p>
+      <div class="card-grid">
+        <div class="card">
+          <span class="card-icon">⚡</span>
+          <h3>Hypertenancy Data Warehouse</h3>
+          <p>Run hundreds of thousands of concurrent queries without the cost and complexity of traditional cloud warehouses.</p>
+        </div>
+        <div class="card">
+          <span class="card-icon">🤖</span>
+          <h3>MotherDuck MCP Server</h3>
+          <p>Connect AI agents and LLMs directly to your data warehouse for real-time analytical access.</p>
+        </div>
+        <div class="card">
+          <span class="card-icon">📊</span>
+          <h3>Serverless Analytics</h3>
+          <p>Zero-infrastructure OLAP that scales from your laptop to production without operational overhead.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="brutal-divider">
+
+  <!-- SECTION: TABS INTERACTIVE DEMO (yellow) -->
+  <section class="section-yellow">
+    <div class="container reveal">
+      <div class="section-label">Interactive Demo</div>
+      <h2 class="section-title">Choose a report to start</h2>
+      <p class="section-desc" style="margin-bottom: 32px;">
+        See how MotherDuck handles real analytical workloads.
+      </p>
+      <div class="tabs">
+        <button class="tab active" data-tab="tab1">Sales by Product</button>
+        <button class="tab" data-tab="tab2">Regional Sales</button>
+        <button class="tab" data-tab="tab3">Customer Growth</button>
+      </div>
+      <div id="tab1" class="tab-content active">
+        <div class="card-grid" style="grid-template-columns: 1fr 1fr;">
+          <div class="card" style="transform: none; box-shadow: none;">
+            <h3>Top Products</h3>
+            <div style="height: 160px; background: #F4EFEA; border: 2px solid #383838; display: flex; align-items: center; justify-content: center; font-family: 'JetBrains Mono', monospace; font-size: 14px; margin-top: 12px;">
+              📈 Product Sales Chart
+            </div>
+          </div>
+          <div class="card" style="transform: none; box-shadow: none;">
+            <h3>Revenue Breakdown</h3>
+            <div style="height: 160px; background: #F4EFEA; border: 2px solid #383838; display: flex; align-items: center; justify-content: center; font-family: 'JetBrains Mono', monospace; font-size: 14px; margin-top: 12px;">
+              🥧 Category Distribution
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="tab2" class="tab-content">
+        <div class="card-grid" style="grid-template-columns: 1fr 1fr;">
+          <div class="card" style="transform: none; box-shadow: none;">
+            <h3>Regional Map</h3>
+            <div style="height: 160px; background: #F4EFEA; border: 2px solid #383838; display: flex; align-items: center; justify-content: center; font-family: 'JetBrains Mono', monospace; font-size: 14px; margin-top: 12px;">
+              🗺️ Geographic Distribution
+            </div>
+          </div>
+          <div class="card" style="transform: none; box-shadow: none;">
+            <h3>Regional Growth</h3>
+            <div style="height: 160px; background: #F4EFEA; border: 2px solid #383838; display: flex; align-items: center; justify-content: center; font-family: 'JetBrains Mono', monospace; font-size: 14px; margin-top: 12px;">
+              📊 YoY by Region
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="tab3" class="tab-content">
+        <div class="card-grid" style="grid-template-columns: 1fr 1fr;">
+          <div class="card" style="transform: none; box-shadow: none;">
+            <h3>User Acquisition</h3>
+            <div style="height: 160px; background: #F4EFEA; border: 2px solid #383838; display: flex; align-items: center; justify-content: center; font-family: 'JetBrains Mono', monospace; font-size: 14px; margin-top: 12px;">
+              📈 Monthly Active Users
+            </div>
+          </div>
+          <div class="card" style="transform: none; box-shadow: none;">
+            <h3>Retention Cohorts</h3>
+            <div style="height: 160px; background: #F4EFEA; border: 2px solid #383838; display: flex; align-items: center; justify-content: center; font-family: 'JetBrains Mono', monospace; font-size: 14px; margin-top: 12px;">
+              🔄 Weekly Retention
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="brutal-divider">
+
+  <!-- SECTION: USE CASES (cream) -->
+  <section class="section-cream">
+    <div class="container reveal">
+      <div class="section-label">Built For</div>
+      <h2 class="section-title">Roles & Use Cases</h2>
+      <div class="card-grid">
+        <div class="card">
+          <span class="card-icon">👨‍💻</span>
+          <h3>Software Engineers</h3>
+          <p>Embed analytics into your SaaS product with DuckDB's lightweight OLAP engine — no heavy infrastructure needed.</p>
+          <div style="margin-top: 12px;">
+            <span class="tag tag-info">API</span>
+            <span class="tag tag-success">Serverless</span>
+          </div>
+        </div>
+        <div class="card">
+          <span class="card-icon">🔬</span>
+          <h3>Data Scientists</h3>
+          <p>Explore and query large datasets on your laptop, then deploy to the cloud without rewriting a single line of SQL.</p>
+          <div style="margin-top: 12px;">
+            <span class="tag tag-purple">AI/ML</span>
+            <span class="tag tag-info">SQL</span>
+          </div>
+        </div>
+        <div class="card">
+          <span class="card-icon">🏢</span>
+          <h3>Analytics Engineers</h3>
+          <p>Build and maintain dbt pipelines with a warehouse that keeps your development loop fast.</p>
+          <div style="margin-top: 12px;">
+            <span class="tag tag-success">dbt</span>
+            <span class="tag tag-info">CI/CD</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="brutal-divider">
+
+  <!-- SECTION: STICKER CTA BAND (blue) -->
+  <section class="section-blue sticker-band">
+    <div class="container reveal" style="text-align: center;">
+      <div style="font-size: 64px; margin-bottom: 16px;">🐤</div>
+      <h2 style="font-family: 'JetBrains Mono', monospace; font-size: 32px; font-weight: 400; margin-bottom: 16px;">
+        Ready to build?
+      </h2>
+      <p style="font-size: 18px; margin-bottom: 32px; max-width: 500px; margin-left: auto; margin-right: auto;">
+        Get started with MotherDuck free. No credit card needed.
+      </p>
+      <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
+        <a href="#" class="btn btn-dark">Start Free Trial</a>
+        <a href="#" class="btn btn-sticker">Subscribe →</a>
+      </div>
+    </div>
+  </section>
+
+  <hr class="brutal-divider">
+
+  <!-- SECTION: NEWSLETTER (yellow) -->
+  <section class="section-yellow">
+    <div class="container reveal">
+      <div class="section-label">Stay Updated</div>
+      <h2 class="section-title">Get the latest from MotherDuck</h2>
+      <div class="newsletter-form" style="margin-top: 24px;">
+        <input type="email" placeholder="E-mail">
+        <div class="checkbox-group">
+          <label class="checkbox">
+            <input type="checkbox" checked> Subscribe to MotherDuck emails
+          </label>
+          <label class="checkbox">
+            <input type="checkbox"> Subscribe to ecosystem newsletter
+          </label>
+        </div>
+        <a href="#" class="btn btn-secondary" style="width: 100%; text-align: center;">Submit</a>
+      </div>
+    </div>
+  </section>
+
+  <hr class="brutal-divider">
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <h4>Product</h4>
+          <ul>
+            <li><a href="#">Overview</a></li>
+            <li><a href="#">Pricing</a></li>
+            <li><a href="#">Docs</a></li>
+            <li><a href="#">MCP Server</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Community</h4>
+          <ul>
+            <li><a href="#">GitHub</a></li>
+            <li><a href="#">Discord</a></li>
+            <li><a href="#">Blog</a></li>
+            <li><a href="#">DuckDB</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Company</h4>
+          <ul>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Careers</a></li>
+            <li><a href="#">Contact</a></li>
+            <li><a href="#">Privacy</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>From the Duck Pond</h4>
+          <ul>
+            <li><a href="#">"DuckDB In Action" Book</a></li>
+            <li><a href="#">MotherDuck Blog</a></li>
+          </ul>
+        </div>
+      </div>
+      <div style="margin-top: 40px; padding-top: 24px; border-top: 1px solid #555; font-size: 12px; opacity: 0.6; font-family: 'JetBrains Mono', monospace;">
+        © 2026 MotherDuck — Infrastructure for answers.
+      </div>
+    </div>
+  </footer>
+
+  <!-- === JAVASCRIPT === -->
+  <script>
+    // Tabs
+    document.querySelectorAll('.tab').forEach(tab => {
+      tab.addEventListener('click', () => {
+        document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+        document.querySelectorAll('.tab-content').forEach(tc => tc.classList.remove('active'));
+        tab.classList.add('active');
+        document.getElementById(tab.dataset.tab).classList.add('active');
+      });
+    });
+
+    // Scroll reveal
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>

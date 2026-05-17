@@ -1,0 +1,910 @@
+# Design Extraction: motherduck
+# Extracted: 2026-05-12T04:30:00Z
+# URL: https://motherduck.com/
+
+meta:
+  site_name: "motherduck"
+  url: "https://motherduck.com/"
+  extracted_at: "2026-05-12T04:30:00Z"
+  extractor_version: "2.1.0"
+  page_height: 14412
+  viewport_tested: "1280x720"
+  coverage:
+    total_sections: 17
+    detected_sections: 17
+    percentage: 100
+    missing: []
+
+psychology:
+  style_classification: "Neo-Brutalist Editorial"
+  # Brutalist DNA (chunky 2-3px borders, hard offset shadows, monospace display type,
+  # zero/tiny radii) softened with warm cream backgrounds, saturated playful accents,
+  # tilted "stickers", and hand-drawn doodle illustrations.
+
+  brand_personality: ["bold", "technical", "playful", "creative"]
+
+  emotions_evoked:
+    - emotion: "Confidence"
+      reason: "Heavyweight monospace headlines + thick black borders feel decisive and engineering-grade"
+    - emotion: "Warmth"
+      reason: "Cream beige (#F4EFEA) base instead of sterile white, plus the duck mascot, lower the formality"
+    - emotion: "Energy"
+      reason: "Saturated yellow / sky blue / coral blocks announce sections like editorial pull-quotes"
+    - emotion: "Insider trust"
+      reason: "Terminal/code aesthetic (Aeonik Mono everywhere) signals 'built by data engineers, for data engineers'"
+
+  target_audience:
+    primary:
+      description: "Data engineers, analytics engineers, and senior data scientists evaluating modern cloud warehouses"
+      age_range: "25-45"
+      tech_savvy: "very high"
+      psychographic: "DuckDB-curious, frustrated with Snowflake/BigQuery cost+ceremony, values speed and serverless ergonomics"
+    secondary:
+      description: "Engineering leaders, founders, and AI/LLM application teams needing a queryable analytical store"
+      age_range: "30-50"
+      tech_savvy: "high"
+
+  visual_principles:
+    - name: "Brutalist contrast"
+      description: "Hard 2-3px charcoal borders + offset solid-color drop shadows (-6px 6px 0 0) on every important surface"
+    - name: "Monospace as voice"
+      description: "Aeonik Mono is used at display sizes (56px H1) — type itself becomes the brand's tone (technical, terminal-native)"
+    - name: "Editorial color blocking"
+      description: "Sections alternate cream → yellow → sky-blue full-bleed bands, like a printed magazine spread"
+    - name: "Playful interruptions"
+      description: "Tilted 'sticker' CTAs, hand-drawn doodles (clouds, ducks, arrows), wiggly lines break the rigor"
+    - name: "Generous whitespace"
+      description: "40px is the dominant padding unit — hero and sections breathe despite the dense styling"
+
+  why_it_works:
+    - "Differentiation in a sea of glassmorphic SaaS dashboards — instantly recognizable as MotherDuck"
+    - "Monospace headline reinforces 'built by infra people' positioning vs Snowflake's corporate gloss"
+    - "Hard offset shadows give every CTA tactile affordance without using fake 3D gradients"
+    - "Cream background reduces eye fatigue on long marketing pages while keeping AAA contrast for body text"
+    - "Charming mascot (duck) + editorial doodles humanize a deeply technical product (cloud OLAP)"
+
+  design_philosophy:
+    core_belief: "Infrastructure software can be opinionated, expressive, and joyful — not just enterprise-gray"
+    key_principles:
+      - "Type does the work — pick a strong monospace and let it carry the brand"
+      - "Borders over shadows — 2-3px outlines beat soft drop shadows for hierarchy"
+      - "Color in blocks, not gradients — flat saturated panels signal sections"
+      - "Playfulness as trust — a confident product can afford to be charming"
+
+sections:
+
+  overview:
+    detected: true
+    style: "Neo-Brutalist Editorial (warm/playful subgenre)"
+    tech_stack: "React (styled-components/emotion class hashes like .sc-* visible), inline SVG icon system, react-toastify, custom CSS animations (no GSAP/Framer detected)"
+    headline: "Infrastructure for Answers"
+    tagline: "The cloud data warehouse built for answers, in SQL or natural language. Fast, serverless analytics powered by DuckDB."
+
+  color_palette:
+    detected: true
+    primary:
+      - hex: "#383838"
+        rgb: "rgb(56, 56, 56)"
+        usage: "primary-text, all borders, dark surfaces, footer bg"
+        count: 1617  # fg + bd + bg combined
+        role: "ink"
+      - hex: "#F4EFEA"
+        rgb: "rgb(244, 239, 234)"
+        usage: "page-background (warm cream — replaces pure white)"
+        count: 35
+        role: "canvas"
+      - hex: "#FFFFFF"
+        rgb: "rgb(255, 255, 255)"
+        usage: "card-background, button-background, contrast surface"
+        count: 41
+        role: "surface"
+    accents:
+      - hex: "#6FC2FF"
+        rgb: "rgb(111, 194, 255)"
+        usage: "primary-CTA fill (TRY 7 DAYS FREE), focus ring, hover underline"
+        count: 28
+        role: "primary-accent (sky blue)"
+      - hex: "#FFDE00"
+        rgb: "rgb(255, 222, 0)"
+        usage: "section-background (newsletter band), hover-highlight on cards"
+        count: 9
+        role: "highlight (sun yellow)"
+      - hex: "#16AA98"
+        rgb: "rgb(22, 170, 152)"
+        usage: "top announcement banner background"
+        count: 3
+        role: "announcement (teal)"
+      - hex: "#53DBC9"
+        rgb: "rgb(83, 219, 201)"
+        usage: "card hover state (community CTA)"
+        count: 1
+        role: "hover-accent (mint)"
+      - hex: "#FF9538"
+        rgb: "rgb(255, 149, 56)"
+        usage: "logo duck flame, decorative dot accents"
+        count: 5
+        role: "brand-mark (orange)"
+      - hex: "#FF7169"
+        rgb: "rgb(255, 113, 105)"
+        usage: "subscribe sticker fill (tilted CTA)"
+        count: 1
+        role: "attention (coral)"
+      - hex: "#2BA5FF"
+        rgb: "rgb(43, 165, 255)"
+        usage: "input focus border, link hover color"
+        count: "rule"
+        role: "focus (saturated blue)"
+    text_colors:
+      - hex: "#383838"
+        usage: "body-text + headings (default ink)"
+        count: 1447
+      - hex: "#FFFFFF"
+        usage: "text-on-dark (footer, banner, dark CTA)"
+        count: 100
+      - hex: "#000000"
+        usage: "true-black for buttons-on-color (CTA labels)"
+        count: 28
+      - hex: "#A2A2A2"
+        usage: "muted/disabled text — decorative use only (fails AA at 2.55:1)"
+        count: 23
+      - hex: "#A1A1A1"
+        usage: "secondary muted"
+        count: 6
+      - hex: "#C0C0C0"
+        usage: "tertiary muted (decorative)"
+        count: 5
+      - hex: "#818181"
+        usage: "icon/divider gray"
+        count: 5
+    border_colors:
+      - hex: "#383838"
+        usage: "primary-divider, all card/button borders (the brutalist outline)"
+        count: 144
+      - hex: "#22C55E"
+        usage: "success-state border"
+        count: 6
+      - hex: "#54B4DE"
+        usage: "info-tag border"
+        count: 1
+      - hex: "#38C1B0"
+        usage: "teal-tag border"
+        count: 1
+      - hex: "#B291DE"
+        usage: "purple-tag border"
+        count: 1
+      - hex: "#B3C419"
+        usage: "lime-tag border"
+        count: 1
+      - hex: "#E1C427"
+        usage: "yellow-tag border"
+        count: 1
+      - hex: "#84A6BC"
+        usage: "slate-tag border"
+        count: 1
+      - hex: "#7597EE"
+        usage: "indigo-tag border"
+        count: 1
+      - hex: "#F38E84"
+        usage: "coral-tag border"
+        count: 1
+      - hex: "#F5B161"
+        usage: "amber-tag border"
+        count: 1
+    pastel_tag_backgrounds:
+      # Light-tint pills/labels paired with the saturated borders above
+      - { hex: "#EBF9FF", pair_border: "#54B4DE", role: "info-tag" }
+      - { hex: "#E8F5E9", pair_border: "#22C55E", role: "success-tag" }
+      - { hex: "#F7F1FF", pair_border: "#B291DE", role: "purple-tag" }
+      - { hex: "#F9FBE7", pair_border: "#B3C419", role: "lime-tag" }
+      - { hex: "#FFFDE7", pair_border: "#E1C427", role: "yellow-tag" }
+      - { hex: "#ECEFF1", pair_border: "#84A6BC", role: "slate-tag" }
+      - { hex: "#EAF0FF", pair_border: "#7597EE", role: "indigo-tag" }
+      - { hex: "#FFEBE9", pair_border: "#F38E84", role: "coral-tag" }
+      - { hex: "#FDEDDA", pair_border: "#F5B161", role: "amber-tag" }
+    neutrals:
+      - hex: "#F8F8F7"
+        usage: "input-background (translucent at 0.7 alpha)"
+      - hex: "#D7D7D7"
+        usage: "subtle-divider"
+    palette_logic:
+      ink: "#383838 — single charcoal does ALL text, ALL borders, dark surfaces"
+      canvas: "#F4EFEA cream is the hero; pure #FFFFFF reserved for cards-on-cream contrast"
+      accent_strategy: "One saturated CTA blue + one highlight yellow drive the page; the 9 pastel-tag pairs are reserved for taxonomy/category labeling (not for major UI)"
+
+  typography:
+    detected: true
+    fonts:
+      - "Aeonik Mono"      # PRIMARY display — headings, buttons, nav
+      - "Aeonik Fono"      # paired sibling — used in announcement banner
+      - "Aeonik"           # weighted sans variant — section eyebrows
+      - "Inter"            # body copy and small text
+      - "sans-serif"       # generic fallback
+      - "Arial"            # secondary fallback
+      - "serif"            # rare fallback
+      - "monospace"        # code blocks
+    font_strategy:
+      display: "Aeonik Mono — the brand voice. Wide letter-spacing (1.12px on H1), used for ALL CTAs and nav. THIS IS THE SIGNATURE."
+      eyebrow: "Aeonik (sans) at 16px / 600 weight / 0.48px tracking — section labels"
+      body: "Inter, Arial, sans-serif at 20px/300 (lead) and 14-16px/400 (default)"
+    weights: ["300", "400", "500", "600", "700"]
+    weight_usage:
+      "300": "lead paragraph (Inter Light) — feels editorial/airy"
+      "400": "all Aeonik Mono headings + body Inter"
+      "500": "h2 secondary headlines"
+      "600": "eyebrow labels (Aeonik)"
+      "700": "rare emphasis"
+    sizes: ["10px", "11px", "12px", "13px", "14px", "16px", "18px", "20px", "24px", "32px", "48px", "56px"]
+    type_scale:
+      h1:
+        fontSize: "56px"
+        fontWeight: "400"
+        fontFamily: "'Aeonik Mono', sans-serif"
+        lineHeight: "67.2px"   # 1.2
+        letterSpacing: "1.12px"
+        text_case: "caps recommended (e.g., 'INFRASTRUCTURE FOR ANSWERS')"
+      h2_section:
+        fontSize: "32px"
+        fontWeight: "400"
+        fontFamily: "'Aeonik Mono'"
+        lineHeight: "44.8px"   # 1.4
+        letterSpacing: "normal"
+      h2_card:
+        fontSize: "24px"
+        fontWeight: "500"
+        fontFamily: "'Aeonik Mono', sans-serif"
+        lineHeight: "28.8px"
+      h3:
+        fontSize: "24px"
+        fontWeight: "400"
+        fontFamily: "'Aeonik Mono', sans-serif"
+        lineHeight: "28.8px"
+      h3_small:
+        fontSize: "18px"
+        fontWeight: "400"
+        lineHeight: "25.2px"   # 1.4
+      eyebrow:
+        fontSize: "16px"
+        fontWeight: "600"
+        fontFamily: "Aeonik, sans-serif"
+        letterSpacing: "0.48px"
+        lineHeight: "19.2px"
+        text_case: "caps"
+      lead:
+        fontSize: "20px"
+        fontWeight: "300"
+        fontFamily: "Inter, Arial, sans-serif"
+        lineHeight: "28px"     # 1.4
+      body:
+        fontSize: "16px"
+        fontWeight: "400"
+        fontFamily: "'Aeonik Mono', sans-serif"
+        letterSpacing: "0.32px"
+        lineHeight: "19.2px"
+      body_small:
+        fontSize: "14px"
+        fontWeight: "400"
+        lineHeight: "16.8px"
+      caption:
+        fontSize: "12px"
+        fontWeight: "300"
+        fontFamily: "Inter"
+        letterSpacing: "0.24px"
+        lineHeight: "16.8px"
+    samples:
+      h1:
+        - text: "Infrastructure for Answers"
+          rendered_as: "INFRASTRUCTURE FOR ANSWERS (uppercase)"
+      h2:
+        - text: "Data Warehouse + AI"
+        - text: '"DuckDB In Action" Book for Free'
+        - text: "Choose a report to start"
+      h3:
+        - text: "Hypertenancy Data Warehouse"
+        - text: "MotherDuck MCP Server"
+        - text: "Software Engineers"
+        - text: "Data Scientists"
+
+  spacing_system:
+    detected: true
+    grid_base: 4   # 4px base — everything snaps to 4 (4, 8, 12, 16, 20, 24, 32, 40, 64)
+    common_values: [4, 8, 12, 16, 20, 24, 32, 40, 64, 160]
+    paddings:
+      - { v: "40px", c: 162, role: "section-vertical, hero, large-card" }
+      - { v: "16px", c: 90,  role: "input, button-md, card-internal" }
+      - { v: "4px",  c: 83,  role: "icon-padding, tight-spacing" }
+      - { v: "10px", c: 80,  role: "small-element" }
+      - { v: "20px", c: 70,  role: "medium-card, subhead-spacing" }
+      - { v: "12px", c: 69,  role: "compact-button, tag" }
+      - { v: "24px", c: 34,  role: "card-internal-large, input horizontal" }
+      - { v: "22px", c: 27 }
+      - { v: "14px", c: 26 }
+      - { v: "6px",  c: 23 }
+      - { v: "8px",  c: 15 }
+      - { v: "1px",  c: 110, role: "border-spacer" }
+    margins:
+      - { v: "10px", c: 57 }
+      - { v: "50px", c: 49,  role: "section-spacing" }
+      - { v: "32px", c: 25 }
+      - { v: "160px", c: 22, role: "huge-section-gap (between editorial bands)" }
+      - { v: "8px",  c: 13 }
+      - { v: "16px", c: 6 }
+    gaps:
+      - { v: "8px",  c: 154, role: "default-flex-gap" }
+      - { v: "4px",  c: 66,  role: "tight-icon-text" }
+      - { v: "6px",  c: 56 }
+      - { v: "12px", c: 17 }
+      - { v: "10px", c: 9 }
+      - { v: "20px", c: 8 }
+      - { v: "40px", c: 6,   role: "card-grid" }
+      - { v: "32px", c: 6 }
+      - { v: "24px", c: 4 }
+      - { v: "16px", c: 4 }
+      - { v: "64px", c: 2,   role: "hero-elements" }
+
+  component_styles:
+    detected: true
+    buttons:
+      primary_cta:
+        # The "TRY 7 DAYS FREE" pattern
+        backgroundColor: "#6FC2FF"
+        color: "#000000"
+        border: "3px solid #383838"
+        borderRadius: "0px"
+        padding: "16px 24px"
+        fontSize: "16px"
+        fontWeight: "400"
+        fontFamily: "'Aeonik Mono', sans-serif"
+        textTransform: "uppercase"
+        letterSpacing: "0.32px"
+        transition: "0.4s ease-out"
+        boxShadow_default: "none"
+        hover_animation: "Inner content translates (translate(7px, -7px)) revealing the offset shadow underneath — the brutalist 'click anticipation'"
+      secondary_cta:
+        # "BOOK A DEMO" pattern
+        backgroundColor: "transparent"
+        color: "#383838"
+        border: "3px solid #383838"
+        borderRadius: "0px"
+        padding: "16px 24px"
+        fontSize: "16px"
+        fontFamily: "'Aeonik Mono', sans-serif"
+        textTransform: "uppercase"
+      tab_button:
+        # The tab pattern from card-tabs (Sales by Product / Regional Sales / etc)
+        backgroundColor: "#FFFFFF"
+        color: "#000000"
+        border: "3px solid #383838"
+        borderRadius: "0px"
+        padding: "16px"
+        boxShadow_active: "rgb(255, 222, 0) -6px 6px 0px 0px"   # YELLOW offset shadow when selected
+        boxShadow_inactive: "none"
+        transition: "0.4s ease-out"
+      sticker_cta:
+        # The tilted "SUBSCRIBE" sticker
+        backgroundColor: "#FF7169"   # coral
+        color: "#000000"
+        border: "3px solid #383838"
+        borderRadius: "0px"
+        transform: "rotate(-3deg to -5deg)"
+        boxShadow: "rgb(56, 56, 56) -6px 6px 0px 0px"
+        fontFamily: "'Aeonik Mono', sans-serif"
+        textTransform: "uppercase"
+      ghost_nav:
+        # PRODUCT / COMMUNITY / COMPANY top nav
+        backgroundColor: "transparent"
+        color: "#383838"
+        border: "1px solid transparent"
+        borderRadius: "2px"
+        fontSize: "16px"
+        textTransform: "uppercase"
+        letterSpacing: "0.32px"
+      small_outline:
+        # The "Clear" filter pattern
+        backgroundColor: "transparent"
+        color: "#FFFFFF"
+        border: "1px solid #FFFFFF"
+        padding: "6px 12px"
+        fontSize: "10px"
+        fontWeight: "500"
+        textTransform: "uppercase"
+        transition: "0.15s"
+    cards:
+      brutalist_card:
+        # The dominant card pattern
+        backgroundColor: "#FFFFFF"
+        border: "2px solid #383838"
+        borderRadius: "0px"
+        boxShadow_default: "none"
+        boxShadow_hover: "rgb(56, 56, 56) -6px 6px 0px 0px"   # offset solid shadow on hover
+        hover_transform: "scale(1.1) on featured cards"
+        hover_h3_bg_change: "background-color shifts to accent (yellow / mint / sky-blue) on hover"
+      info_card_with_shadow:
+        # CTA cards used in the announcement bands
+        backgroundColor: "#FFFFFF"
+        border: "2px solid #383838"
+        boxShadow: "rgba(0, 0, 0, 0.25) 0px 4px 8px 0px"  # the ONE soft shadow on the page
+        padding: "16px"
+    inputs:
+      text_input:
+        # Newsletter / form pattern
+        height: "58px"
+        backgroundColor: "rgba(248, 248, 247, 0.7)"
+        border: "2px solid #383838"
+        borderRadius: "2px"
+        padding: "16px 24px 16px 24px"   # extra-right (40px) for icon space
+        fontSize: "16px"
+        fontFamily: "Inter"
+        transition: "0.2s ease-in-out"
+        hover_border: "2px solid #2BA5FF"
+        focus_border: "2px solid #2BA5FF"
+        focus_shadow: "none (border color change only)"
+      compact_input:
+        # 44px short variant
+        height: "44px"
+        backgroundColor: "#FFFFFF"
+        border: "2px solid #383838"
+        borderRadius: "0px"
+        padding: "0 16px"
+        fontSize: "14px"
+        transition: "box-shadow 0.15s"
+        focus_shadow: "rgba(111, 194, 255, 0.925) -2.77px 2.77px 0px 0px"   # offset sky-blue focus ring (signature!)
+      checkbox:
+        # Newsletter subscription opt-ins — square checkbox, matches brutalist style
+        size: "~25.5px"
+        border_inferred: "2px solid #383838"
+        check_color: "#383838"
+
+  shadows_elevation:
+    detected: true
+    philosophy: "Brutalist hard offset shadows are the dominant elevation system — NO soft drop shadows except one info-card variant"
+    values:
+      - css: "rgb(56, 56, 56) -6px 6px 0px 0px"
+        usage: "card-hover, sticker-CTA — charcoal hard shadow offset down-left"
+        type: "brutalist-offset"
+        count: 2
+      - css: "rgb(255, 222, 0) -6px 6px 0px 0px"
+        usage: "active-tab — YELLOW hard shadow signals selected state"
+        type: "brutalist-offset-color"
+        count: 1
+      - css: "rgba(111, 194, 255, 0.925) -3px 3px 0px 0px"
+        usage: "input-focus — SKY-BLUE hard shadow offset, the focus ring"
+        type: "brutalist-offset-focus"
+        count: "rule (dynamic)"
+      - css: "rgba(0, 0, 0, 0.25) 0px 4px 8px 0px"
+        usage: "info-card on full-bleed colored bands — only soft shadow on the site"
+        type: "soft-elevation (rare)"
+        count: 1
+    elevation_levels:
+      none: "default state for all surfaces"
+      hover: "-6px 6px 0 0 charcoal — appears on interactive cards"
+      focus: "-3px 3px 0 0 sky-blue (light) — appears on inputs"
+      active: "-6px 6px 0 0 yellow — appears on selected tab"
+
+  animations_transitions:
+    detected: true
+    keyframes:
+      - name: "hCmOrq"
+        css: "0% { transform: translateY(1rem); opacity: 0; } 100% { transform: translateY(0); opacity: 1; }"
+        usage: "fade-in-up entrance"
+      - name: "iBNjHa"
+        css: "0% { transform: translateY(0); opacity: 1; } 100% { transform: translateY(1rem); opacity: 0; }"
+        usage: "fade-out-down exit"
+      - name: "idkxa"
+        css: "complex translate+scale tooltip enter"
+        usage: "tooltip/popover enter (0.25s ease-in-out)"
+      - name: "jLKMiS"
+        css: "complex translate+scale tooltip exit"
+        usage: "tooltip/popover exit (0.25s ease-in-out)"
+      - name: "Toastify__bounceIn[Right|Left|Up|Down]"
+        css: "5-stop cubic-bezier(0.215, 0.61, 0.355, 1) bounce 3000px translate"
+        usage: "toast entry (react-toastify default)"
+      - name: "Toastify__bounceOut[Right|Left|Up|Down]"
+        usage: "toast exit"
+      - name: "Toastify__slideIn / slideOut [direction]"
+        usage: "alternate toast transitions"
+      - name: "Toastify__zoomIn / zoomOut"
+        usage: "alternate toast transitions"
+      - name: "Toastify__flipIn / flipOut"
+        css: "perspective(400px) rotateX 3D card flip"
+        usage: "alternate toast transitions"
+      - name: "Toastify__spin"
+        css: "0% rotate(0) → 100% rotate(1turn)"
+        usage: "loading spinner inside toasts"
+      - name: "Toastify__trackProgress"
+        css: "scaleX(1) → scaleX(0)"
+        usage: "toast auto-dismiss progress bar"
+    transitions:
+      - { duration: "0.12s", timing: "ease-in-out", property: "transform", role: "fast micro-interaction (most common at 22 occurrences)" }
+      - { duration: "0.15s", timing: "ease-in-out", property: "transform", role: "very fast UI feedback" }
+      - { duration: "0.15s", timing: "default", property: "box-shadow", role: "input focus-ring appearance" }
+      - { duration: "0.2s",  timing: "ease-in-out", property: "transform", role: "standard interactive transform" }
+      - { duration: "0.2s",  timing: "ease-in-out", property: "opacity", role: "fade transitions" }
+      - { duration: "0.3s",  timing: "default", property: "background-color, color", role: "color-shift on hover" }
+      - { duration: "0.4s",  timing: "ease-out", property: "all", role: "card / brutalist button hover lift" }
+      - { duration: "1s",    timing: "default", property: "transform, opacity", role: "scroll-triggered reveal" }
+    signature_easings:
+      - "cubic-bezier(0.215, 0.61, 0.355, 1)  # Toastify bounce — borrowed from animate.css"
+      - "ease-out 0.4s  # the brutalist hover (allows the offset shadow to feel weighty)"
+      - "ease-in-out 0.12-0.2s  # default UI rhythm (snappy, never sluggish)"
+    libraries:
+      - { name: "gsap", detected: false }
+      - { name: "framer-motion", detected: false }
+      - { name: "lottie", detected: false, players: 0 }
+      - { name: "anime", detected: false }
+      - { name: "three", detected: false }
+      - { name: "rive", detected: false }
+      - { name: "spline", detected: false }
+      - { name: "react-toastify", detected: true, evidence: "36 --toastify-* CSS custom properties + Toastify__* keyframes" }
+    scroll_animations:
+      system: "custom (CSS keyframe + IntersectionObserver assumed — no data-aos / data-scroll attrs found)"
+      patterns: ["fade-in-up (hCmOrq)", "fade-out-down (iBNjHa)"]
+      count: "applied via styled-components hash classes; not enumerable from DOM attributes"
+    background_media:
+      autoplay_videos: 2
+      webm_sources: 2
+      mp4_sources: 0
+      gifs: 0
+      lottie_players: 0
+      note: "Looped silent webm videos for product demonstrations (likely UI walkthroughs)"
+    hover_signature_patterns:
+      - pattern: "Brutalist lift"
+        css: "transform: translate(7px, -7px) on inner content — exposes the static offset shadow underneath"
+        applies_to: "primary CTAs, brutalist buttons"
+      - pattern: "Border underline"
+        css: "border-bottom: calc(0.09em + 1px) solid #6FC2FF on inline links/spans"
+        applies_to: "text links — animated underline grows from baseline"
+      - pattern: "Scale-up emphasis"
+        css: "transform: scale(1.1) !important; opacity: 1 !important"
+        applies_to: "featured CTA cards (.fAbQfd, .comCta, .fzXPOx)"
+      - pattern: "Color-swap H3"
+        css: "background-color shifts to accent (yellow / mint / sky-blue), color stays #383838"
+        applies_to: "card titles within scaled cards"
+      - pattern: "Pop-out card"
+        css: "position: absolute; border-width: 4px; border-radius: 36px; transform: scale(1.15)"
+        applies_to: "carousel/grid cards on desktop ≥1302px — they break out of grid on hover"
+      - pattern: "Fade opacity"
+        css: "opacity: 0.6 on hover"
+        applies_to: ".hZpbRG (subtle interactive)"
+
+  border_radius:
+    detected: true
+    values: ["0px", "2px", "3px", "10px", "50%"]
+    distribution:
+      "0px": "MOST surfaces — pure brutalist hard corners (cards, primary buttons, tabs, inputs)"
+      "2px": "141 occurrences — subtle radius on nav-buttons, tags, secondary inputs"
+      "3px": "7 occurrences — slight radius variant"
+      "10px": "1 occurrence — single rare card"
+      "50%": "28 occurrences — circular buttons (close, social icons)"
+      "36px": "hover-only — pop-out cards transform from 0px → 36px when scaling 1.15 (delightful surprise)"
+    philosophy: "Default to ZERO radius (brutalist), use 2px for non-hero UI chrome, use 50% for icon containers"
+
+  border_styles:
+    detected: true
+    widths: ["1px", "2px", "3px", "4px"]
+    width_usage:
+      "1px": "60 occurrences — dividers, ghost nav buttons, subtle outlines"
+      "2px": "128 occurrences — DOMINANT — all cards, inputs, secondary buttons"
+      "3px": "3 occurrences — primary CTAs, tabs (heavier weight = higher hierarchy)"
+      "4px": "hover-only — pop-out cards thicken border on scale-1.15 hover"
+    colors: ["#383838", "#22C55E", "#54B4DE", "#7597EE", "#B291DE", "#F38E84", "#F5B161", "#B3C419", "#E1C427", "#84A6BC", "#38C1B0", "#FFFFFF", "#000000"]
+    style: "solid (always — no dashed/dotted)"
+
+  layout_patterns:
+    detected: true
+    container_width: "960px"   # ONLY container max-width detected — narrow editorial column
+    grid_columns: "12 implied (used in card grids)"
+    page_width_strategy: "Centered 960px content max — wide accent bands (cream / yellow / sky-blue) full-bleed background, content stays narrow for readability"
+    page_height: "14412px (long-scroll marketing page)"
+    breakpoints:
+      - { name: "small-mobile", query: "max-width: 480px" }
+      - { name: "tablet", query: "min-width: 728px" }
+      - { name: "desktop", query: "min-width: 960px" }
+      - { name: "wide-desktop", query: "min-width: 1302px" }
+    layout_signatures:
+      - "Full-bleed colored sections with 960px-centered content"
+      - "Tabs: equal-width, 3px borders, active state = colored offset shadow"
+      - "Card grids: 2-3 columns at desktop, full-bleed on mobile, 40px gaps"
+      - "Sticker CTAs: absolutely positioned with rotate(-3deg to -5deg)"
+
+  icons_imagery:
+    detected: true
+    system: "inline-svg"
+    count: 209
+    icon_class_count: 1   # virtually no icon-classed wrappers — SVGs are inlined directly
+    fontawesome: 0
+    common_sizes:
+      - { size: "20px", count: 61, role: "default UI icon" }
+      - { size: "27px", count: 52, role: "medium decorative icon" }
+      - { size: "24px", count: 24, role: "button-attached icon (e.g., →)" }
+      - { size: "86px", count: 20, role: "section illustration / mascot panel" }
+      - { size: "16px", count: 9,  role: "tiny label icon" }
+      - { size: "72px", count: 6,  role: "feature illustration" }
+    style: "mixed — outline strokes for UI icons, filled hand-drawn doodles for decorative (clouds, ducks, arrows, stars)"
+    decorative_signature: "Hand-drawn marker/doodle illustrations: clouds, wavy underlines, stars, duck mascot in various poses, pointing-finger cursors — gives the brutalist grid a playful counter-rhythm"
+    imagery_strategy: "Decorative SVGs scattered across long page break visual monotony; product screenshots framed inside brutalist 2-3px borders"
+
+  loading_states:
+    detected: true
+    patterns:
+      - type: "spinner"
+        keyframe: "Toastify__spin"
+        css: "@keyframes Toastify__spin { 0% { transform: rotate(0) } 100% { transform: rotate(1turn) } }"
+        implementation: ".Toastify__spinner { width: 20px; height: 20px; border-width: 2px; border-radius: 100%; ... }"
+        source: "react-toastify (only spinner detected)"
+      - type: "skeleton"
+        class_pattern: ".skeleton-filler"
+        css: ".jbvjHm .skeleton-filler:first-child { display: block; }"
+        implementation: "Custom skeleton placeholders (likely tied to lazy-loaded card content)"
+      - type: "progress-bar"
+        keyframe: "Toastify__trackProgress"
+        css: "scaleX(1) → scaleX(0)"
+        usage: "Toast auto-dismiss countdown"
+    note: "No global page-load shimmer or large skeleton system — site is mostly statically rendered"
+
+  feedback_states:
+    detected: true
+    error:
+      color: "#E74C3C"   # from --toastify-color-error
+      classes: [".Toastify__toast--error"]
+      implementation: "react-toastify managed only — no inline form error styling detected on the marketing page"
+    success:
+      color: "#07BC0C"   # from --toastify-color-success
+      classes: [".Toastify__toast--success"]
+    warning:
+      color: "#F1C40F"   # from --toastify-color-warning
+      classes: [".Toastify__toast--warning"]
+    info:
+      color: "#3498DB"   # from --toastify-color-info
+    toast_system:
+      library: "react-toastify"
+      detected: true
+      position: "configurable (library default top-right)"
+      max_height: "800px"
+      width: "fit-content"
+      z_index: 9999
+      animations: "bounce / slide / zoom / flip in 4 directions (full Toastify suite loaded)"
+    alert_elements:
+      role_alert: 1
+      aria_live: 1
+      note: "Single live region — likely the toast container"
+    in_page_validation: "NOT directly observed on the marketing page (no .error / .invalid styling beyond Toastify). Likely handled inside the app dashboard, not the marketing site."
+
+  form_patterns:
+    detected: true
+    forms:
+      - type: "newsletter"
+        index: 0
+        location: "footer / yellow band"
+        fields:
+          - { name: "email", type: "text (email-styled)", placeholder: "E-mail", required: false }
+          - { name: "subscribe_md_emails", type: "checkbox", required: false }
+          - { name: "subscribe_ecosystem_newsletter", type: "checkbox", required: false }
+        layout: "stacked"
+        submit_text: "SUBMIT"
+        submit_style: "secondary CTA — uppercase Aeonik Mono, white bg, 3px charcoal border"
+      - type: "newsletter"
+        index: 1
+        location: "secondary placement"
+        fields:
+          - { name: "email", type: "text", required: false }
+          - { name: "subscribe_md_emails", type: "checkbox", required: false }
+        layout: "stacked"
+        submit_text: "Submit"
+    field_styling:
+      input: "58px tall, 2px charcoal border, 0px or 2px radius, 16px Inter, translucent gray bg (rgba(248,248,247,0.7))"
+      placeholder: "default browser muted, likely #A2A2A2"
+      label: "Aeonik Mono uppercase eyebrow above field — animated to top on focus-within (`top: -5px; transform: translateY(-100%)`)"
+      checkbox: "square ~25px, 2px charcoal border, charcoal check"
+    label_animation: "Material-style floating label — sits inside on default, slides above on focus-within"
+    validation: "No HTML5 required/pattern attributes on marketing forms (server-side validation assumed)"
+
+  accessibility:
+    detected: true
+    focus_styles:
+      - element: "input (text/email)"
+        style_default: "outline: none + 2px charcoal border (no shadow)"
+        style_focus: "+ box-shadow: rgba(111, 194, 255, 0.925) -3px 3px 0 0 (sky-blue offset shadow ring)"
+        notes: "Matches the brutalist aesthetic — focus ring is itself a hard offset color block"
+      - element: "input (compact variant)"
+        style_focus: "border-color shifts from #383838 to #355166 (deep slate)"
+      - element: "input.fFAtFO"
+        style_focus: "outline: none; border: 2px solid #2BA5FF (saturated blue)"
+      - element: "Toastify close-button"
+        style_focus_hover: "opacity: 1"
+    aria_usage:
+      aria-hidden: 54   # primarily on decorative SVG doodles
+      aria-label: 21    # on icon-only buttons + nav toggles
+      aria-live: 1      # toast region
+    roles:
+      alert: 1
+      dialog: 1
+    semantic_html:
+      present: ["nav", "main", "footer", "section", "article"]
+      missing: ["header", "aside"]
+      note: "Solid semantic structure — only header/aside missing (often expected on marketing sites)"
+    tabindex:
+      total: 52
+    contrast_ratios:
+      - { pair: "primary-text #383838 on white #FFFFFF", ratio: 11.73, wcag_aa: true, wcag_aaa: true }
+      - { pair: "primary-text #383838 on cream #F4EFEA", ratio: 10.26, wcag_aa: true, wcag_aaa: true }
+      - { pair: "white on dark #383838", ratio: 11.73, wcag_aa: true, wcag_aaa: true }
+      - { pair: "muted #A2A2A2 on white", ratio: 2.55, wcag_aa: false, wcag_aaa: false, note: "decorative use only" }
+      - { pair: "sky-blue #6FC2FF on white", ratio: 1.94, wcag_aa: false, wcag_aaa: false, note: "used as background fill (with dark text on top), not as foreground text" }
+      - { pair: "dark #383838 on yellow #FFDE00", ratio: 8.77, wcag_aa: true, wcag_aaa: true }
+    a11y_assessment: "STRONG — primary text combinations all hit AAA. Sky blue and gray-text only used decoratively where legibility isn't critical. Focus states are highly visible and on-brand."
+
+# Detailed animation states (from interactive probing + CSS rules)
+animations:
+  primary_cta:
+    type: "button"
+    description: "Brutalist content-translate hover — inner element shifts 7px right + 7px up, exposing the static offset shadow"
+    transition: "0.4s ease-out"
+    states:
+      default:
+        background: "#6FC2FF"
+        boxShadow: "none (shadow lives on a sibling/pseudo)"
+        transform: "translate(0, 0) on inner #styled-button-component"
+      hover:
+        background: "#6FC2FF"
+        boxShadow: "shadow stays, but content lifts off it"
+        transform: "translate(7px, -7px) on inner #styled-button-component"
+  text_input:
+    type: "input"
+    description: "Sky-blue offset shadow appears on focus (the 'brutalist focus ring')"
+    transition: "box-shadow 0.15s"
+    states:
+      default:
+        backgroundColor: "#FFFFFF"
+        borderColor: "#383838"
+        borderWidth: "2px"
+        boxShadow: "none"
+      focus:
+        backgroundColor: "#FFFFFF"
+        borderColor: "#383838"
+        borderWidth: "2px"
+        boxShadow: "rgba(111, 194, 255, 0.925) -2.77px 2.77px 0 0"
+  newsletter_input:
+    type: "input"
+    description: "Border color shifts to saturated blue on hover and focus"
+    transition: "0.2s ease-in-out"
+    states:
+      default:
+        backgroundColor: "rgba(248, 248, 247, 0.7)"
+        borderColor: "#383838"
+      hover:
+        borderColor: "#2BA5FF"
+      focus:
+        borderColor: "#2BA5FF"
+  featured_card:
+    type: "card"
+    description: "Card scales to 1.1 and the H3 background fills with accent color (yellow / mint / sky-blue depending on category)"
+    transition: "0.4s ease-out"
+    states:
+      default:
+        transform: "scale(1)"
+        h3_background: "transparent"
+      hover:
+        transform: "scale(1.1)"
+        opacity: "1 !important"
+        h3_background: "#FFDE00 (or #53DBC9 community / #6FC2FF product) — color codes the category"
+        h3_color: "#383838"
+  popout_card:
+    type: "card-grid-tile"
+    description: "Desktop ≥1302px only — card breaks out of grid, gets 4px border, 36px radius, 1.15 scale"
+    states:
+      default:
+        position: "static"
+        borderWidth: "2px"
+        borderRadius: "0px"
+        transform: "scale(1)"
+      hover:
+        position: "absolute"
+        borderWidth: "4px"
+        borderRadius: "36px"
+        transform: "scale(1.15)"
+        offset_top: "-20px (some variants)"
+  inline_link:
+    type: "text-link"
+    description: "Underline grows from baseline in sky-blue"
+    transition: "border-bottom 0.2s ease-in-out"
+    states:
+      default:
+        borderBottom: "0px solid transparent"
+      hover:
+        borderBottom: "calc(0.09em + 1px) solid #6FC2FF"
+        marginBottom: "0px"
+  active_tab:
+    type: "tab-button"
+    description: "Selected tab shows yellow offset shadow"
+    states:
+      inactive:
+        boxShadow: "none"
+      active:
+        boxShadow: "#FFDE00 -6px 6px 0 0"
+  scroll_reveal:
+    type: "section-content"
+    description: "Default entrance — translateY 1rem + opacity 0 → 0"
+    keyframe: "hCmOrq"
+    duration: "0.4-1s"
+    states:
+      offscreen:
+        transform: "translateY(1rem)"
+        opacity: 0
+      onscreen:
+        transform: "translateY(0)"
+        opacity: 1
+
+# Toast library configuration (read from CSS custom props)
+css_custom_properties:
+  layout:
+    --eyebrow-desktop: "55px"
+    --eyebrow-mobile: "70px"
+    --header-desktop: "90px"
+    --header-mobile: "70px"
+  toast_colors:
+    --toastify-color-light: "#fff"
+    --toastify-color-dark: "#121212"
+    --toastify-color-info: "#3498db"
+    --toastify-color-success: "#07bc0c"
+    --toastify-color-warning: "#f1c40f"
+    --toastify-color-error: "#e74c3c"
+    --toastify-color-transparent: "hsla(0,0%,100%,.7)"
+  toast_text:
+    --toastify-text-color-light: "#757575"
+    --toastify-text-color-dark: "#fff"
+    --toastify-text-color-info: "#fff"
+    --toastify-text-color-success: "#fff"
+    --toastify-text-color-warning: "#fff"
+    --toastify-text-color-error: "#fff"
+  toast_progress:
+    --toastify-color-progress-light: "linear-gradient(90deg,#4cd964,#5ac8fa,#007aff,#34aadc,#5856d6,#ff2d55)"
+    --toastify-color-progress-dark: "#bb86fc"
+    --toastify-color-progress-info: "#3498db"
+    --toastify-color-progress-success: "#07bc0c"
+    --toastify-color-progress-warning: "#f1c40f"
+    --toastify-color-progress-error: "#e74c3c"
+  toast_layout:
+    --toastify-toast-width: "fit-content"
+    --toastify-toast-min-height: "fit-content"
+    --toastify-toast-max-height: "800px"
+    --toastify-toast-background: "#fff"
+    --toastify-z-index: "9999"
+    --toastify-font-family: "sans-serif"
+  toast_spinner:
+    --toastify-spinner-color: "#616161"
+    --toastify-spinner-color-empty-area: "#e0e0e0"
+  swiper:
+    --swiper-theme-color: "#007aff"
+
+navigation_structure:
+  detected: true
+  nav_count: 7
+  primary_menu:
+    - { text: "PRODUCT", type: "dropdown-trigger" }
+    - { text: "COMMUNITY", type: "dropdown-trigger" }
+    - { text: "COMPANY", type: "dropdown-trigger" }
+    - { text: "DOCS", href: "/docs/getting-started/" }
+    - { text: "PRICING", href: "/product/pricing/" }
+    - { text: "CONTACT US", href: "/contact-us/product-expert/" }
+  utility:
+    - "Hamburger menu icon (mobile)"
+  cta_in_nav: "TRY 7 DAYS FREE primary CTA likely in top-right (sky-blue brutalist button)"
+  banner_above_nav: "Teal #16AA98 announcement strip with arrow link"
+
+implementation_notes:
+  framework_signals:
+    - "styled-components or emotion (sc-* and randomized class hashes like .fAbQfd, .gedfcC)"
+    - "React (JSX-style data attributes)"
+    - "react-toastify (notification system)"
+    - "swiper.js (carousels — --swiper-theme-color detected)"
+    - "No GSAP, Framer Motion, Lottie, anime.js, three.js, Rive, or Spline"
+  font_loading: "Aeonik family is custom-loaded (likely self-hosted woff2). Inter is fallback paired."
+  performance: "Single full-page is 14400px tall — heavy use of intersection-observer reveal animations is the only feasible approach"
+  responsive_strategy: "Mobile-first ascending breakpoints (480 / 728 / 960 / 1302). Pop-out card hover effects reserved for ≥1302px (gracefully disabled on smaller)"
+  signature_recipe:
+    - "1. Cream #F4EFEA page bg + Aeonik Mono uppercase headline = instant 'MotherDuck'"
+    - "2. Every interactive element gets a 2-3px charcoal border with 0px radius"
+    - "3. Hover/focus = colored hard-offset shadow (-6px 6px 0 0 in yellow / sky / charcoal)"
+    - "4. CTAs translate(7px, -7px) on hover to expose the static shadow underneath"
+    - "5. Punctuate sections with full-bleed yellow / sky-blue / teal bands containing 960px-wide content"
+    - "6. Sprinkle hand-drawn SVG doodles (clouds, ducks, stars) to soften the rigor"
