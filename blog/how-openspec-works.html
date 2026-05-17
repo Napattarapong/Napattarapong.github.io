@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>How I Used OpenSpec to Build My Portfolio — Napattarapong</title>
+  <meta name="description" content="A beginner's guide to the OpenSpec structured workflow system for planning and building software projects.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+
+  <!-- NAVIGATION -->
+  <nav>
+    <div class="logo">ml<span>.</span></div>
+    <div class="nav-links">
+      <a href="../index.html">About</a>
+      <a href="../index.html#skills">Skills</a>
+      <a href="../index.html#projects">Projects</a>
+      <a href="." style="color: #6FC2FF;">Blog</a>
+      <a href="../index.html#research">Research</a>
+    </div>
+  </nav>
+
+  <!-- BLOG POST -->
+  <section class="bg-cream">
+    <div class="container">
+      <a href="." class="back-link">← Back to all posts</a>
+      <div class="blog-post">
+        <div class="blog-post-header">
+          <div class="blog-tags">
+            <span class="tag tag-blue">OpenSpec</span>
+            <span class="tag tag-green">Workflow</span>
+            <span class="tag tag-purple">Tools</span>
+          </div>
+          <h1>How I Used OpenSpec to Build My Portfolio — A Beginner's Guide</h1>
+          <div class="post-meta">
+            <span>📅 May 17, 2026</span>
+            <span>📖 5 min read</span>
+            <span>🏷️ openspec, workflow, tools</span>
+          </div>
+        </div>
+        <div class="blog-post-body">
+
+          <h2>What is OpenSpec?</h2>
+          <p>OpenSpec is a <strong>structured workflow system</strong> that helps you break down a project into clear stages before writing any code. Instead of jumping straight into coding and figuring things out as you go, OpenSpec forces you to think through <strong>what</strong> you're building, <strong>why</strong>, and <strong>how</strong> — then gives you a checklist to execute.</p>
+          <p>Think of it as a <strong>recipe for building software</strong>. You wouldn't bake a cake without knowing the ingredients and steps — so why code without a plan?</p>
+
+          <h2>The 4 Artifacts of Every Change</h2>
+          <p>Every feature or fix in OpenSpec is called a <strong>change</strong>. Each change produces 4 artifacts in order:</p>
+          <pre>Proposal → Specs → Design → Tasks</pre>
+
+          <h3>1. Proposal — The "Why"</h3>
+          <p>The proposal answers: <strong>What problem are we solving? Why now?</strong></p>
+          <p>For my portfolio, the proposal said:</p>
+          <blockquote>"I need a personal portfolio landing page to showcase my data science and ML engineering skills to potential employers."</blockquote>
+          <p>It also listed what capabilities would be created:</p>
+          <ul>
+            <li><code>portfolio-layout</code> — the page structure</li>
+            <li><code>brutalist-design-system</code> — the CSS design tokens</li>
+            <li><code>contact-form</code> — form with validation</li>
+            <li><code>resume-download</code> — PDF download links</li>
+            <li><code>scroll-reveal-animations</code> — entrance animations</li>
+          </ul>
+          <p><strong>No technical details here.</strong> Just the goal and scope.</p>
+
+          <h3>2. Specs — The "What"</h3>
+          <p>Specs define <strong>exactly what the system should do</strong>. Each capability from the proposal gets its own spec file with requirements and testable scenarios.</p>
+          <p>Example from the <code>contact-form</code> spec:</p>
+          <pre>### Requirement: Form validation
+When the Send Message button is clicked, the form SHALL validate
+that all three fields are non-empty.
+
+#### Scenario: Empty form shows error
+- WHEN clicking Send Message with empty fields
+- THEN an alert SHALL display "Please fill in all fields."</pre>
+          <p>Every requirement has a <strong>scenario</strong> written in WHEN/THEN format. These are essentially test cases before you write any code.</p>
+
+          <h3>3. Design — The "How"</h3>
+          <p>The design doc covers <strong>technical decisions and architecture</strong>. This is where you answer questions like:</p>
+          <ul>
+            <li><strong>Should we use a framework?</strong> → No, pure HTML/CSS/JS is simpler for a static page</li>
+            <li><strong>What font should we use?</strong> → JetBrains Mono as a stand-in for the paid Aeonik Mono</li>
+            <li><strong>How do we do animations?</strong> → IntersectionObserver, not a library</li>
+          </ul>
+          <p>It also lists risks and trade-offs:</p>
+          <blockquote>"The contact form is client-side only. Messages aren't actually sent. Mitigation: Formspree can be added later."</blockquote>
+
+          <h3>4. Tasks — The "Do"</h3>
+          <p>Finally, the task list breaks everything into <strong>checkboxes</strong>. Our portfolio had 49 tasks across 8 groups:</p>
+          <pre>## 1. Project Setup
+- [x] 1.1 Create project directory structure
+- [x] 1.2 Create index.html with boilerplate
+- [x] 1.3 Create styles.css
+...
+
+## 2. Design System Tokens
+- [x] 2.1 Define CSS reset and base styles
+- [x] 2.2 Define layout utilities
+...</pre>
+          <p>Each task is small enough to complete in one sitting. You check them off as you go.</p>
+
+          <h2>The Full Workflow in Practice</h2>
+          <p>Here's exactly what we did:</p>
+          <pre>1. openspec new change "portfolio-landing-page"
+   → Creates a scaffold folder
+
+2. Create proposal.md
+   → What &amp; why
+
+3. Create 6 spec files
+   → One for each capability
+
+4. Create design.md
+   → Technical decisions
+
+5. Create tasks.md with 49 tasks
+   → The implementation checklist
+
+6. Apply (implement)
+   → Write the actual code, check off tasks
+
+7. Verify
+   → Check that implementation matches specs
+
+8. Archive
+   → Move to openspec/changes/archive/</pre>
+
+          <h2>Why This Matters</h2>
+          <p>Before OpenSpec, I would have just opened a code editor and started typing. The result? Probably messy code, forgotten features, and no documentation of what I built.</p>
+          <p>With OpenSpec:</p>
+          <ul>
+            <li><strong>I had a plan</strong> before I wrote a single line of code</li>
+            <li><strong>Every feature was documented</strong> — if I come back in 6 months, I know exactly what I built and why</li>
+            <li><strong>The specs double as test cases</strong> — I can verify my code against them</li>
+            <li><strong>Changes are archived</strong> — I can look back at old proposals for reference</li>
+          </ul>
+
+          <hr>
+
+          <p><em>This post was written as part of the portfolio blog section. The OpenSpec workflow used to build this site is fully documented in the project archive at <code>openspec/changes/archive/2026-05-17-portfolio-landing-page/</code>.</em></p>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="brutal-divider">
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <h4>Navigation</h4>
+          <ul>
+            <li><a href="../index.html#about">About</a></li>
+            <li><a href="../index.html#skills">Skills</a></li>
+            <li><a href="../index.html#projects">Projects</a></li>
+            <li><a href="../index.html#research">Research</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Contact</h4>
+          <ul>
+            <li><a href="#">hello@datascience.dev</a></li>
+            <li><a href="../assets/NapattarapongCV_intern.pdf" download>Resume (PDF)</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Social</h4>
+          <div class="social-links">
+            <a href="https://github.com/Napattarapong" target="_blank" rel="noopener" title="GitHub">⌂</a>
+            <a href="https://www.linkedin.com/in/napattarapong-chockwiriyajit-680510329/" target="_blank" rel="noopener" title="LinkedIn">▣</a>
+            <a href="#" title="Kaggle">◈</a>
+          </div>
+        </div>
+        <div>
+          <h4>Colophon</h4>
+          <ul>
+            <li><a href="#">Built with brutalist intent</a></li>
+            <li><a href="#">JetBrains Mono + Inter</a></li>
+            <li><a href="#">Hosted with ❤️</a></li>
+          </ul>
+        </div>
+      </div>
+      <div style="margin-top: 40px; padding-top: 24px; border-top: 1px solid #555; font-size: 12px; opacity: 0.6; font-family: 'JetBrains Mono', monospace;">
+        © 2026 — Data Science Portfolio
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
